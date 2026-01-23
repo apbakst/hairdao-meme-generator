@@ -1,0 +1,27 @@
+# Environment files (contain secrets)
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Output files
+output/*.png
+output/*.jpg
+data/*.json
+data/pending/*.json
+
+# Logs
+*.log
+server.log
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
