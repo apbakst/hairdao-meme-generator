@@ -12,6 +12,8 @@ from config import OUTPUT_DIR, DATA_DIR, MEME_STYLES
 from scraper import load_website_content
 from discord_scanner import load_discord_content
 from meme_generator import generate_meme_concept
+from trend_fetcher import get_combined_trends, fetch_all_trends
+from trend_analyzer import get_fresh_trending_memes, generate_trending_memes, load_trending_memes
 from image_creator import (
     create_meme_from_concept,
     MEME_TEMPLATES,
@@ -261,6 +263,73 @@ HTML_TEMPLATE = """
             font-size: 11px;
             margin: 0;
         }
+        .trends-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .trend-item {
+            background: #0f3460;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .trend-item:hover {
+            border-color: #00d4aa;
+            background: #1a4a7a;
+        }
+        .trend-item .source {
+            font-size: 10px;
+            color: #00d4aa;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .trend-item .topic {
+            font-size: 14px;
+            color: #fff;
+            line-height: 1.4;
+        }
+        .trend-item .meta {
+            font-size: 11px;
+            color: #888;
+            margin-top: 8px;
+        }
+        .trending-meme-card {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 15px;
+            border: 2px solid transparent;
+        }
+        .trending-meme-card:hover {
+            border-color: #00d4aa;
+        }
+        .trending-meme-card .trend-ref {
+            font-size: 10px;
+            color: #00d4aa;
+            margin-bottom: 8px;
+        }
+        .trending-meme-card .caption {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .trending-meme-card .description {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+        .trending-meme-card .hashtags {
+            font-size: 11px;
+            color: #00d4aa;
+            margin-bottom: 10px;
+        }
+        .trending-meme-card button {
+            width: 100%;
+        }
         .batch-progress {
             background: #0f3460;
             padding: 15px;
@@ -296,6 +365,7 @@ HTML_TEMPLATE = """
 
     <div class="tabs">
         <button class="tab active" onclick="showTab('editor')">Canvas Editor</button>
+        <button class="tab" onclick="showTab('trending')">Trending Memes</button>
         <button class="tab" onclick="showTab('gallery')">Batch Review</button>
         <button class="tab" onclick="showTab('discord')">Discord Data</button>
     </div>
@@ -442,6 +512,31 @@ HTML_TEMPLATE = """
                 <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
             </div>
             <div id="gallery-grid" class="gallery-grid"></div>
+        </div>
+    </div>
+
+    <!-- TRENDING MEMES TAB -->
+    <div id="trending-tab" class="tab-content">
+        <div class="panel">
+            <h2>Trending Memes</h2>
+            <p style="color:#888;">Auto-generated meme concepts based on trending topics from Twitter, News, and Reddit.</p>
+
+            <div class="gallery-controls">
+                <button onclick="fetchTrends()">Refresh Trends</button>
+                <button onclick="generateTrendingMemes()" class="secondary">Generate New Memes</button>
+                <span id="trends-status" style="color:#888; margin-left:15px;"></span>
+            </div>
+
+            <div id="trends-progress" class="batch-progress" style="display:none;">
+                <div>Analyzing trends... <span id="trends-progress-text">Please wait</span></div>
+                <div class="progress-bar"><div class="progress-fill" id="trends-progress-fill" style="width:50%;"></div></div>
+            </div>
+
+            <h3 style="color:#00d4aa; margin-top:20px;">Current Trends</h3>
+            <div id="trends-list" class="trends-list"></div>
+
+            <h3 style="color:#00d4aa; margin-top:30px;">Generated Meme Concepts</h3>
+            <div id="trending-memes-grid" class="gallery-grid"></div>
         </div>
     </div>
 
@@ -1371,6 +1466,167 @@ HTML_TEMPLATE = """
             await fetch('/clear-pending', {method: 'POST'});
             loadPending();
         }
+
+        // Trending memes functions
+        async function fetchTrends() {
+            document.getElementById('trends-status').textContent = 'Fetching trends...';
+            try {
+                const response = await fetch('/api/trends');
+                const data = await response.json();
+                displayTrends(data.trends || []);
+                document.getElementById('trends-status').textContent =
+                    `Updated ${new Date().toLocaleTimeString()}`;
+            } catch (e) {
+                document.getElementById('trends-status').textContent = 'Error fetching trends';
+            }
+        }
+
+        function displayTrends(trends) {
+            const container = document.getElementById('trends-list');
+            if (!trends.length) {
+                container.innerHTML = '<p style="color:#888;">No trends available. Click "Refresh Trends" to fetch.</p>';
+                return;
+            }
+
+            container.innerHTML = trends.map((trend, i) => `
+                <div class="trend-item" onclick="createMemeFromTrend(${i})">
+                    <div class="source">${trend.source || 'unknown'}</div>
+                    <div class="topic">${(trend.topic || '').substring(0, 100)}</div>
+                    <div class="meta">
+                        ${trend.subreddit ? 'r/' + trend.subreddit + ' • ' : ''}
+                        ${trend.score ? trend.score + ' pts' : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            window.currentTrends = trends;
+        }
+
+        async function createMemeFromTrend(index) {
+            if (!window.currentTrends || !window.currentTrends[index]) return;
+
+            const trend = window.currentTrends[index];
+            showStatus('Creating meme from trend...', 'loading');
+
+            try {
+                const response = await fetch('/api/meme-from-trend', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({trend: trend})
+                });
+                const data = await response.json();
+
+                if (data.concept) {
+                    // Load into editor
+                    textLayers = [];
+                    if (data.concept.top_text) {
+                        addTextLayer(data.concept.top_text);
+                        textLayers[textLayers.length-1].y = 60;
+                    }
+                    if (data.concept.bottom_text) {
+                        addTextLayer(data.concept.bottom_text);
+                        textLayers[textLayers.length-1].y = canvas.height - 60;
+                    }
+                    if (!data.concept.top_text && !data.concept.bottom_text && data.concept.caption) {
+                        addTextLayer(data.concept.caption);
+                    }
+                    updateLayersList();
+                    redrawCanvas();
+                    showTab('editor');
+                    showStatus('Meme concept loaded! Edit as needed.', 'success');
+                }
+            } catch (e) {
+                showStatus('Error creating meme: ' + e.message, 'error');
+            }
+        }
+
+        async function generateTrendingMemes() {
+            document.getElementById('trends-progress').style.display = 'block';
+            document.getElementById('trends-progress-text').textContent = 'Analyzing trends and generating memes...';
+
+            try {
+                const response = await fetch('/api/generate-trending', {method: 'POST'});
+                const data = await response.json();
+
+                document.getElementById('trends-progress').style.display = 'none';
+                displayTrendingMemes(data.memes || []);
+                showStatus(`Generated ${(data.memes || []).length} trending meme concepts!`, 'success');
+            } catch (e) {
+                document.getElementById('trends-progress').style.display = 'none';
+                showStatus('Error generating memes: ' + e.message, 'error');
+            }
+        }
+
+        async function loadTrendingMemes() {
+            try {
+                const response = await fetch('/api/trending-memes');
+                const data = await response.json();
+                displayTrendingMemes(data.memes || []);
+            } catch (e) {
+                console.error('Error loading trending memes:', e);
+            }
+        }
+
+        function displayTrendingMemes(memes) {
+            const container = document.getElementById('trending-memes-grid');
+            if (!memes.length) {
+                container.innerHTML = '<p style="color:#888;">No generated memes yet. Click "Generate New Memes" to create some from current trends.</p>';
+                return;
+            }
+
+            container.innerHTML = memes.map((meme, i) => `
+                <div class="trending-meme-card">
+                    <div class="trend-ref">📈 ${meme.trend_reference || 'Trending'}</div>
+                    <div class="caption">${meme.caption || meme.top_text || 'Meme concept'}</div>
+                    <div class="description">${meme.description || ''}</div>
+                    ${meme.hashtags ? `<div class="hashtags">${meme.hashtags.map(h => '#' + h).join(' ')}</div>` : ''}
+                    <button onclick="useTrendingMeme(${i})">Use This Concept</button>
+                </div>
+            `).join('');
+
+            window.trendingMemes = memes;
+        }
+
+        function useTrendingMeme(index) {
+            if (!window.trendingMemes || !window.trendingMemes[index]) return;
+
+            const meme = window.trendingMemes[index];
+
+            // Load into editor
+            textLayers = [];
+            if (meme.top_text) {
+                addTextLayer(meme.top_text);
+                textLayers[textLayers.length-1].y = 60;
+            }
+            if (meme.bottom_text) {
+                addTextLayer(meme.bottom_text);
+                textLayers[textLayers.length-1].y = canvas.height - 60;
+            }
+            if (!meme.top_text && !meme.bottom_text && meme.caption) {
+                addTextLayer(meme.caption);
+            }
+
+            // Load suggested template if available
+            if (meme.template_suggestion && meme.template_suggestion !== 'custom') {
+                const templateName = meme.template_suggestion.toLowerCase().replace(/ /g, '_');
+                loadTemplate(templateName);
+            }
+
+            updateLayersList();
+            redrawCanvas();
+            showTab('editor');
+            showStatus('Trending meme loaded! Edit as needed.', 'success');
+        }
+
+        // Load trending data when tab is shown
+        const originalShowTab = showTab;
+        showTab = function(tab) {
+            originalShowTab(tab);
+            if (tab === 'trending') {
+                fetchTrends();
+                loadTrendingMemes();
+            }
+        };
     </script>
 </body>
 </html>
@@ -1531,6 +1787,58 @@ def clear_pending():
     for f in PENDING_DIR.glob('*.json'):
         f.unlink()
     return jsonify({'success': True})
+
+
+# Trending memes API routes
+@app.route('/api/trends')
+def get_trends():
+    """Get current trending topics."""
+    try:
+        trends = get_combined_trends(limit=20)
+        return jsonify({'trends': trends})
+    except Exception as e:
+        return jsonify({'error': str(e), 'trends': []})
+
+
+@app.route('/api/trending-memes')
+def get_trending_memes():
+    """Get previously generated trending memes."""
+    try:
+        memes = load_trending_memes()
+        return jsonify({'memes': memes})
+    except Exception as e:
+        return jsonify({'error': str(e), 'memes': []})
+
+
+@app.route('/api/generate-trending', methods=['POST'])
+def generate_trending():
+    """Generate new meme concepts from current trends."""
+    try:
+        memes = generate_trending_memes(count=5)
+        return jsonify({'memes': memes})
+    except Exception as e:
+        return jsonify({'error': str(e), 'memes': []})
+
+
+@app.route('/api/meme-from-trend', methods=['POST'])
+def meme_from_trend():
+    """Generate a meme concept from a specific trend."""
+    try:
+        from trend_analyzer import generate_meme_from_trend
+        data = request.json
+        trend = data.get('trend', {})
+
+        # Create a trend object with meme_angle
+        analyzed_trend = {
+            'topic': trend.get('topic', ''),
+            'meme_angle': f"Connect '{trend.get('topic', '')}' to HairDAO or crypto culture",
+            'suggested_caption': ''
+        }
+
+        concept = generate_meme_from_trend(analyzed_trend)
+        return jsonify({'concept': concept})
+    except Exception as e:
+        return jsonify({'error': str(e), 'concept': None})
 
 
 if __name__ == '__main__':
