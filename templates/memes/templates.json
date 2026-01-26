@@ -1,0 +1,142 @@
+{
+  "templates": [
+    {
+      "id": "bald_wojak",
+      "name": "Bald Wojak",
+      "filename": "bald_wojak.png",
+      "description": "Sad bald Wojak for hair loss struggle reactions",
+      "use_cases": ["hair loss", "disappointment", "struggle", "before treatment"],
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["sad", "bald", "norwood", "receding", "struggle"]
+    },
+    {
+      "id": "hair_diamond_hands",
+      "name": "Diamond Hands Hair",
+      "filename": "hair_diamond_hands.png",
+      "description": "Person with diamond hands holding their hair",
+      "use_cases": ["holding $HAIR", "not selling", "conviction", "diamond hands"],
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["diamond", "hands", "hold", "hodl", "hair", "conviction"]
+    },
+    {
+      "id": "regrowth_gigachad",
+      "name": "Regrowth Gigachad",
+      "filename": "regrowth_gigachad.png",
+      "description": "Gigachad with full hair for treatment success stories",
+      "use_cases": ["success", "regrowth", "treatment working", "after treatment"],
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["gigachad", "success", "regrowth", "chad", "winning"]
+    },
+    {
+      "id": "minoxidil_vs_hairdao",
+      "name": "Minoxidil vs HairDAO",
+      "filename": "minoxidil_vs_hairdao.png",
+      "description": "Split comparison meme for product comparisons",
+      "use_cases": ["comparison", "minoxidil", "traditional vs web3", "upgrade"],
+      "text_positions": {
+        "left_label": {"x_percent": 25, "y_percent": 10},
+        "right_label": {"x_percent": 75, "y_percent": 10},
+        "bottom": {"y_percent": 90, "max_width_percent": 90}
+      },
+      "keywords": ["versus", "comparison", "minoxidil", "finasteride", "better"]
+    },
+    {
+      "id": "norwood_reaper",
+      "name": "Norwood Reaper",
+      "filename": "norwood_reaper.png",
+      "description": "Grim reaper meme for hair loss progression humor",
+      "use_cases": ["hair loss progression", "inevitable", "norwood scale", "fear"],
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["norwood", "reaper", "death", "inevitable", "progression"]
+    },
+    {
+      "id": "anagen_phase",
+      "name": "Anagen Phase",
+      "filename": "anagen_phase.png",
+      "description": "Hair cycle diagram meme for science-based humor",
+      "use_cases": ["science", "hair cycle", "anagen", "growth phase", "education"],
+      "text_positions": {
+        "caption": {"y_percent": 0, "max_width_percent": 95}
+      },
+      "keywords": ["anagen", "catagen", "telogen", "cycle", "science", "phase"]
+    },
+    {
+      "id": "wagmi_hair",
+      "name": "WAGMI Hair",
+      "filename": "wagmi_hair.png",
+      "description": "Optimistic community meme with luscious hair",
+      "use_cases": ["optimism", "community", "wagmi", "hope", "future"],
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["wagmi", "gmi", "hope", "together", "community"]
+    },
+    {
+      "id": "before_after",
+      "name": "Before/After",
+      "filename": "before_after.png",
+      "description": "Split template for transformation memes",
+      "use_cases": ["transformation", "results", "progress", "before after"],
+      "text_positions": {
+        "left_label": {"x_percent": 25, "y_percent": 95},
+        "right_label": {"x_percent": 75, "y_percent": 95}
+      },
+      "keywords": ["before", "after", "transformation", "results", "progress"]
+    },
+    {
+      "id": "hair_pepe",
+      "name": "Hair Pepe",
+      "filename": "hair_pepe.png",
+      "description": "Pepe with various hair states for crypto culture memes",
+      "use_cases": ["crypto", "feels", "comfy", "rare", "pepe"],
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["pepe", "feels", "good", "man", "crypto"]
+    },
+    {
+      "id": "expanding_brain_hair",
+      "name": "Expanding Brain (Hair Edition)",
+      "filename": "expanding_brain_hair.png",
+      "description": "Expanding brain meme adapted for hair loss solutions",
+      "use_cases": ["escalation", "levels", "brain", "intelligence", "solutions"],
+      "text_positions": {
+        "row1": {"y_percent": 12, "max_width_percent": 45},
+        "row2": {"y_percent": 37, "max_width_percent": 45},
+        "row3": {"y_percent": 62, "max_width_percent": 45},
+        "row4": {"y_percent": 87, "max_width_percent": 45}
+      },
+      "keywords": ["brain", "expanding", "levels", "intelligence", "ascend"]
+    }
+  ],
+  "default_fonts": {
+    "impact": "Impact",
+    "arial": "Arial",
+    "comic_sans": "Comic Sans MS"
+  },
+  "color_schemes": {
+    "classic": {
+      "text": "#FFFFFF",
+      "outline": "#000000"
+    },
+    "hairdao": {
+      "primary": "#7C3AED",
+      "secondary": "#06B6D4",
+      "text": "#FFFFFF"
+    }
+  }
+}

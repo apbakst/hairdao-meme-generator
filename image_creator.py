@@ -11,6 +11,67 @@ from PIL import Image, ImageDraw, ImageFont
 from config import TEMPLATES_DIR, OUTPUT_DIR
 
 
+# HairDAO-specific template directory
+HAIRDAO_TEMPLATES_DIR = TEMPLATES_DIR / "memes"
+
+
+def load_hairdao_templates() -> dict:
+    """Load HairDAO-specific meme templates from JSON config."""
+    config_path = HAIRDAO_TEMPLATES_DIR / "templates.json"
+    if config_path.exists():
+        import json
+        with open(config_path, "r") as f:
+            return json.load(f)
+    return {"templates": []}
+
+
+def get_hairdao_template(template_id: str) -> Image.Image:
+    """Load a HairDAO-specific template image."""
+    config = load_hairdao_templates()
+    
+    for template in config.get("templates", []):
+        if template["id"] == template_id:
+            img_path = HAIRDAO_TEMPLATES_DIR / template["filename"]
+            if img_path.exists():
+                return Image.open(img_path)
+    
+    raise ValueError(f"HairDAO template '{template_id}' not found")
+
+
+def match_hairdao_template(concept: dict) -> str:
+    """Match a concept to the best HairDAO template based on keywords."""
+    config = load_hairdao_templates()
+    templates = config.get("templates", [])
+    
+    if not templates:
+        return None
+    
+    # Collect text from concept to match against
+    search_text = " ".join([
+        concept.get("top_text", "") or "",
+        concept.get("bottom_text", "") or "",
+        concept.get("caption", "") or "",
+        concept.get("description", "") or "",
+        concept.get("humor_explanation", "") or "",
+    ]).lower()
+    
+    # Score each template
+    best_match = None
+    best_score = 0
+    
+    for template in templates:
+        score = 0
+        for keyword in template.get("keywords", []):
+            if keyword.lower() in search_text:
+                score += 1
+        
+        if score > best_score:
+            best_score = score
+            best_match = template["id"]
+    
+    return best_match
+
+
 # Popular meme templates with URLs (using imgflip's popular templates)
 MEME_TEMPLATES = {
     # Classic memes
@@ -113,6 +174,22 @@ def wrap_text(text: str, font: ImageFont, max_width: int, draw: ImageDraw) -> li
 
 def download_template(template_name: str) -> Image.Image:
     """Download a meme template image."""
+    # First, check HairDAO-specific templates
+    try:
+        return get_hairdao_template(template_name)
+    except ValueError:
+        pass
+    
+    # Check HairDAO templates directory directly
+    hairdao_path = HAIRDAO_TEMPLATES_DIR / f"{template_name}.png"
+    if hairdao_path.exists():
+        return Image.open(hairdao_path)
+    
+    hairdao_path = HAIRDAO_TEMPLATES_DIR / f"{template_name}.jpg"
+    if hairdao_path.exists():
+        return Image.open(hairdao_path)
+    
+    # Check online templates
     if template_name in MEME_TEMPLATES:
         url = MEME_TEMPLATES[template_name]
         response = requests.get(url)
@@ -392,13 +469,42 @@ def create_meme_from_concept(concept: dict) -> Image.Image:
         "roll safe": "roll_safe",
         "stonks": "stonks",
     }
+    
+    # HairDAO-specific template map
+    hairdao_template_map = {
+        "bald wojak": "bald_wojak",
+        "diamond hands": "hair_diamond_hands",
+        "gigachad": "regrowth_gigachad",
+        "minoxidil": "minoxidil_vs_hairdao",
+        "norwood": "norwood_reaper",
+        "anagen phase": "anagen_phase",
+        "wagmi": "wagmi_hair",
+        "before after": "before_after",
+        "pepe": "hair_pepe",
+        "expanding brain hair": "expanding_brain_hair",
+    }
 
     # Try to find matching template
     template_key = None
-    for key in template_map:
+    
+    # First, check HairDAO templates
+    for key in hairdao_template_map:
         if key in template.lower():
-            template_key = template_map[key]
+            template_key = hairdao_template_map[key]
             break
+    
+    # Then check standard templates
+    if not template_key:
+        for key in template_map:
+            if key in template.lower():
+                template_key = template_map[key]
+                break
+    
+    # Try to match based on concept content
+    if not template_key:
+        hairdao_match = match_hairdao_template(concept)
+        if hairdao_match:
+            template_key = hairdao_match
 
     if not template_key:
         template_key = random.choice(list(MEME_TEMPLATES.keys()))

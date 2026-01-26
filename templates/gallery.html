@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+    <div>
+        <h1>Meme Gallery</h1>
+        <p style="color: var(--text-secondary);">
+            {{ total_memes }} memes generated for HairDAO
+        </p>
+    </div>
+    <a href="/generate" class="btn btn-primary">Generate New Meme +</a>
+</div>
+
+{% if memes %}
+<div class="grid grid-4">
+    {% for meme in memes %}
+    <div class="meme-card">
+        <a href="{{ meme.url }}" target="_blank">
+            <img src="{{ meme.url }}" alt="Generated meme" loading="lazy">
+        </a>
+        <div class="meme-card-info">
+            <p style="font-weight: 500;">{{ meme.filename[:25] }}{% if meme.filename|length > 25 %}...{% endif %}</p>
+            <p>{{ meme.created }} • {{ meme.size_kb }} KB</p>
+            <div class="meme-card-actions">
+                <a href="/download/{{ meme.filename }}" class="btn btn-secondary btn-sm">Download</a>
+                <button class="btn btn-secondary btn-sm" onclick="deleteMeme('{{ meme.filename }}')" style="color: var(--error);">Delete</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if total_pages > 1 %}
+<div class="pagination">
+    {% if page > 1 %}
+    <a href="/gallery?page={{ page - 1 }}">← Previous</a>
+    {% endif %}
+    
+    {% for p in range(1, total_pages + 1) %}
+        {% if p == page %}
+        <a href="/gallery?page={{ p }}" class="active">{{ p }}</a>
+        {% elif p <= 3 or p > total_pages - 2 or (p >= page - 1 and p <= page + 1) %}
+        <a href="/gallery?page={{ p }}">{{ p }}</a>
+        {% elif p == 4 or p == total_pages - 2 %}
+        <span style="padding: 10px;">...</span>
+        {% endif %}
+    {% endfor %}
+    
+    {% if page < total_pages %}
+    <a href="/gallery?page={{ page + 1 }}">Next →</a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% else %}
+<div class="card" style="text-align: center; padding: 60px;">
+    <h2 style="margin-bottom: 15px;">No memes yet! 🎨</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 25px;">
+        Start generating some dank HairDAO memes.
+    </p>
+    <a href="/generate" class="btn btn-primary">Generate Your First Meme →</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function deleteMeme(filename) {
+    if (!confirm('Delete this meme?')) return;
+    
+    try {
+        const response = await fetch(`/api/memes/${filename}`, { method: 'DELETE' });
+        if (response.ok) {
+            window.location.reload();
+        } else {
+            alert('Failed to delete meme');
+        }
+    } catch (e) {
+        console.error(e);
+        alert('Error deleting meme');
+    }
+}
+</script>
+{% endblock %}

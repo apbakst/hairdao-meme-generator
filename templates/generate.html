@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Generate Meme</h1>
+<p style="color: var(--text-secondary); margin-bottom: 40px;">
+    Create AI-powered memes for the HairDAO community.
+</p>
+
+{% if error %}
+<div class="alert alert-error">
+    ❌ {{ error }}
+</div>
+{% endif %}
+
+<div class="grid grid-2">
+    <!-- Generation Form -->
+    <div class="card">
+        <h2>🎨 Meme Settings</h2>
+        
+        <form action="/generate" method="POST" id="generate-form">
+            <div class="form-group">
+                <label for="topic">Topic / Theme (optional)</label>
+                <input 
+                    type="text" 
+                    id="topic" 
+                    name="topic" 
+                    placeholder="e.g., diamond hands, minoxidil vs Anagen, hair regrowth journey..."
+                    value="{{ topic or '' }}"
+                >
+                <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 8px;">
+                    Leave empty for a random HairDAO-themed meme
+                </p>
+            </div>
+            
+            <div class="form-group">
+                <label for="style">Meme Style</label>
+                <select id="style" name="style">
+                    {% for s in styles %}
+                    <option value="{{ s }}" {% if s == selected_style %}selected{% endif %}>
+                        {% if s == 'classic_top_bottom' %}📝 Classic Top/Bottom
+                        {% elif s == 'modern_caption' %}💬 Modern Caption
+                        {% elif s == 'ai_generated' %}🤖 AI Generated Image (DALL-E)
+                        {% elif s == 'twitter_screenshot' %}🐦 Twitter Screenshot
+                        {% elif s == 'discord_message' %}💜 Discord Message
+                        {% else %}{{ s }}
+                        {% endif %}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+                <span class="btn-text">Generate Meme 🚀</span>
+                <div class="loading"><div class="spinner"></div> Generating...</div>
+            </button>
+        </form>
+    </div>
+    
+    <!-- Style Guide -->
+    <div class="card">
+        <h2>📖 Style Guide</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="topic-card">
+                <div class="topic-header">
+                    <span class="topic-title">📝 Classic Top/Bottom</span>
+                </div>
+                <p class="topic-angle">Traditional meme with white Impact font text at top and bottom. Works great with existing templates.</p>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-header">
+                    <span class="topic-title">💬 Modern Caption</span>
+                </div>
+                <p class="topic-angle">Clean caption above the image. Popular for Twitter/Instagram. Great for subtle humor.</p>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-header">
+                    <span class="topic-title">🤖 AI Generated</span>
+                </div>
+                <p class="topic-angle">DALL-E 3 generates a custom image based on the concept. Most creative option, but slower.</p>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-header">
+                    <span class="topic-title">🐦 Twitter Screenshot</span>
+                </div>
+                <p class="topic-angle">Fake tweet format. Perfect for "this you?" or hot take memes.</p>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-header">
+                    <span class="topic-title">💜 Discord Message</span>
+                </div>
+                <p class="topic-angle">Fake Discord message style. Great for community inside jokes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if generated_meme %}
+<!-- Generated Meme Result -->
+<div class="card" style="margin-top: 30px;">
+    <div class="alert alert-success">
+        ✅ Meme generated successfully!
+    </div>
+    
+    <div class="result-container">
+        <div class="result-image">
+            <a href="{{ generated_meme.url }}" target="_blank">
+                <img src="{{ generated_meme.url }}" alt="Generated meme">
+            </a>
+        </div>
+        
+        <div class="result-details">
+            <h3>Meme Details</h3>
+            
+            {% if generated_meme.concept.style %}
+            <div class="detail-item">
+                <div class="detail-label">Style</div>
+                <div class="detail-value">{{ generated_meme.concept.style }}</div>
+            </div>
+            {% endif %}
+            
+            {% if generated_meme.concept.template_suggestion %}
+            <div class="detail-item">
+                <div class="detail-label">Template</div>
+                <div class="detail-value">{{ generated_meme.concept.template_suggestion }}</div>
+            </div>
+            {% endif %}
+            
+            {% if generated_meme.concept.top_text %}
+            <div class="detail-item">
+                <div class="detail-label">Top Text</div>
+                <div class="detail-value">{{ generated_meme.concept.top_text }}</div>
+            </div>
+            {% endif %}
+            
+            {% if generated_meme.concept.bottom_text %}
+            <div class="detail-item">
+                <div class="detail-label">Bottom Text</div>
+                <div class="detail-value">{{ generated_meme.concept.bottom_text }}</div>
+            </div>
+            {% endif %}
+            
+            {% if generated_meme.concept.caption %}
+            <div class="detail-item">
+                <div class="detail-label">Caption</div>
+                <div class="detail-value">{{ generated_meme.concept.caption }}</div>
+            </div>
+            {% endif %}
+            
+            {% if generated_meme.concept.humor_explanation %}
+            <div class="detail-item">
+                <div class="detail-label">Why it's funny</div>
+                <div class="detail-value" style="font-style: italic;">{{ generated_meme.concept.humor_explanation }}</div>
+            </div>
+            {% endif %}
+            
+            <div style="margin-top: 25px; display: flex; gap: 10px;">
+                <a href="/download/{{ generated_meme.filename }}" class="btn btn-primary">
+                    Download 📥
+                </a>
+                <a href="/generate" class="btn btn-secondary">
+                    Generate Another
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('generate-form').addEventListener('submit', function() {
+    const btn = document.getElementById('submit-btn');
+    const text = btn.querySelector('.btn-text');
+    const loading = btn.querySelector('.loading');
+    
+    text.style.display = 'none';
+    loading.classList.add('active');
+    btn.disabled = true;
+});
+</script>
+{% endblock %}

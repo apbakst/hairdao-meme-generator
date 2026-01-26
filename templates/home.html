@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to HairDAO Meme Generator</h1>
+<p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem;">
+    AI-powered, trend-aware meme generation for the HairDAO community.
+</p>
+
+<div class="grid grid-2">
+    <!-- Trending Topics Section -->
+    <div class="card">
+        <div class="card-header">
+            <h2>📈 Trending Topics</h2>
+            <button class="btn btn-secondary btn-sm" onclick="refreshTrends()">
+                <span class="refresh-text">Refresh</span>
+                <div class="loading"><div class="spinner"></div></div>
+            </button>
+        </div>
+        
+        {% if trending_topics %}
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            {% for topic in trending_topics %}
+            <div class="topic-card">
+                <div class="topic-header">
+                    <span class="topic-title">{{ topic.topic[:60] }}{% if topic.topic|length > 60 %}...{% endif %}</span>
+                    <span class="relevance-badge">{{ topic.relevance }}/10</span>
+                </div>
+                {% if topic.meme_angle %}
+                <p class="topic-angle">💡 {{ topic.meme_angle }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p style="color: var(--text-secondary);">No trending topics yet. Click refresh to fetch trends!</p>
+        {% endif %}
+        
+        <div style="margin-top: 20px;">
+            <a href="/generate" class="btn btn-primary">Generate from Trends →</a>
+        </div>
+    </div>
+    
+    <!-- Quick Generate Section -->
+    <div class="card">
+        <h2>⚡ Quick Generate</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+            Create a meme instantly with AI.
+        </p>
+        
+        <form action="/generate" method="POST">
+            <div class="form-group">
+                <label for="topic">Topic (optional)</label>
+                <input type="text" id="topic" name="topic" placeholder="e.g., hair regrowth, diamond hands...">
+            </div>
+            
+            <div class="form-group">
+                <label for="style">Meme Style</label>
+                <select id="style" name="style">
+                    <option value="modern_caption">Modern Caption</option>
+                    <option value="classic_top_bottom">Classic Top/Bottom</option>
+                    <option value="ai_generated">AI Generated Image</option>
+                    <option value="twitter_screenshot">Twitter Screenshot</option>
+                    <option value="discord_message">Discord Message</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Generate Meme 🎨</button>
+        </form>
+    </div>
+</div>
+
+<!-- Recent Memes Section -->
+{% if recent_memes %}
+<div class="card" style="margin-top: 30px;">
+    <div class="card-header">
+        <h2>🖼️ Recent Memes</h2>
+        <a href="/gallery" class="btn btn-secondary btn-sm">View All →</a>
+    </div>
+    
+    <div class="grid grid-4">
+        {% for meme in recent_memes %}
+        <div class="meme-card">
+            <a href="{{ meme.url }}" target="_blank">
+                <img src="{{ meme.url }}" alt="Generated meme" loading="lazy">
+            </a>
+            <div class="meme-card-info">
+                <p>{{ meme.created }}</p>
+                <div class="meme-card-actions">
+                    <a href="/download/{{ meme.filename }}" class="btn btn-secondary btn-sm">Download</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Stats Section -->
+<div class="grid grid-3" style="margin-top: 30px;">
+    <div class="card" style="text-align: center;">
+        <h3 style="font-size: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{{ recent_memes|length if recent_memes else 0 }}+</h3>
+        <p style="color: var(--text-secondary);">Memes Generated</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h3 style="font-size: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">5</h3>
+        <p style="color: var(--text-secondary);">Meme Styles</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h3 style="font-size: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">∞</h3>
+        <p style="color: var(--text-secondary);">WAGMI Energy</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function refreshTrends() {
+    const btn = document.querySelector('.card-header button');
+    const text = btn.querySelector('.refresh-text');
+    const loading = btn.querySelector('.loading');
+    
+    text.style.display = 'none';
+    loading.classList.add('active');
+    btn.disabled = true;
+    
+    try {
+        const response = await fetch('/api/refresh-trends', { method: 'POST' });
+        if (response.ok) {
+            window.location.reload();
+        }
+    } catch (e) {
+        console.error(e);
+    } finally {
+        text.style.display = 'inline';
+        loading.classList.remove('active');
+        btn.disabled = false;
+    }
+}
+</script>
+{% endblock %}
