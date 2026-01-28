@@ -1,140 +1,279 @@
 {
   "templates": [
     {
-      "id": "bald_wojak",
-      "name": "Bald Wojak",
-      "filename": "bald_wojak.png",
-      "description": "Sad bald Wojak for hair loss struggle reactions",
-      "use_cases": ["hair loss", "disappointment", "struggle", "before treatment"],
+      "id": "drake",
+      "name": "Drake Hotline Bling",
+      "filename": "drake.jpg",
+      "description": "Drake disapproving then approving - perfect for comparisons",
+      "category": "comparison",
       "text_positions": {
-        "top": {"y_percent": 5, "max_width_percent": 90},
-        "bottom": {"y_percent": 85, "max_width_percent": 90}
+        "top_right": {"x_percent": 75, "y_percent": 25, "max_width_percent": 45},
+        "bottom_right": {"x_percent": 75, "y_percent": 75, "max_width_percent": 45}
       },
-      "keywords": ["sad", "bald", "norwood", "receding", "struggle"]
+      "keywords": ["drake", "comparison", "approve", "disapprove", "better"]
     },
     {
-      "id": "hair_diamond_hands",
-      "name": "Diamond Hands Hair",
-      "filename": "hair_diamond_hands.png",
-      "description": "Person with diamond hands holding their hair",
-      "use_cases": ["holding $HAIR", "not selling", "conviction", "diamond hands"],
+      "id": "distracted_boyfriend",
+      "name": "Distracted Boyfriend",
+      "filename": "distracted_boyfriend.jpg",
+      "description": "Guy looking at another girl while girlfriend watches",
+      "category": "comparison",
       "text_positions": {
-        "top": {"y_percent": 5, "max_width_percent": 90},
-        "bottom": {"y_percent": 85, "max_width_percent": 90}
+        "girl": {"x_percent": 15, "y_percent": 50},
+        "guy": {"x_percent": 50, "y_percent": 50},
+        "girlfriend": {"x_percent": 85, "y_percent": 50}
       },
-      "keywords": ["diamond", "hands", "hold", "hodl", "hair", "conviction"]
+      "keywords": ["distracted", "boyfriend", "temptation", "looking"]
     },
     {
-      "id": "regrowth_gigachad",
-      "name": "Regrowth Gigachad",
-      "filename": "regrowth_gigachad.png",
-      "description": "Gigachad with full hair for treatment success stories",
-      "use_cases": ["success", "regrowth", "treatment working", "after treatment"],
+      "id": "two_buttons",
+      "name": "Two Buttons",
+      "filename": "two_buttons.jpg",
+      "description": "Sweating guy choosing between two buttons",
+      "category": "choice",
       "text_positions": {
-        "top": {"y_percent": 5, "max_width_percent": 90},
-        "bottom": {"y_percent": 85, "max_width_percent": 90}
-      },
-      "keywords": ["gigachad", "success", "regrowth", "chad", "winning"]
-    },
-    {
-      "id": "minoxidil_vs_hairdao",
-      "name": "Minoxidil vs HairDAO",
-      "filename": "minoxidil_vs_hairdao.png",
-      "description": "Split comparison meme for product comparisons",
-      "use_cases": ["comparison", "minoxidil", "traditional vs web3", "upgrade"],
-      "text_positions": {
-        "left_label": {"x_percent": 25, "y_percent": 10},
-        "right_label": {"x_percent": 75, "y_percent": 10},
+        "left_button": {"x_percent": 25, "y_percent": 25},
+        "right_button": {"x_percent": 75, "y_percent": 25},
         "bottom": {"y_percent": 90, "max_width_percent": 90}
       },
-      "keywords": ["versus", "comparison", "minoxidil", "finasteride", "better"]
+      "keywords": ["buttons", "choice", "decision", "sweating", "hard choice"]
     },
     {
-      "id": "norwood_reaper",
-      "name": "Norwood Reaper",
-      "filename": "norwood_reaper.png",
-      "description": "Grim reaper meme for hair loss progression humor",
-      "use_cases": ["hair loss progression", "inevitable", "norwood scale", "fear"],
+      "id": "expanding_brain",
+      "name": "Expanding Brain",
+      "filename": "expanding_brain.jpg",
+      "description": "Brain getting bigger with increasingly enlightened takes",
+      "category": "escalation",
+      "text_positions": {
+        "row1": {"x_percent": 25, "y_percent": 12, "max_width_percent": 45},
+        "row2": {"x_percent": 25, "y_percent": 37, "max_width_percent": 45},
+        "row3": {"x_percent": 25, "y_percent": 62, "max_width_percent": 45},
+        "row4": {"x_percent": 25, "y_percent": 87, "max_width_percent": 45}
+      },
+      "keywords": ["brain", "expanding", "levels", "intelligence", "ascend", "galaxy brain"]
+    },
+    {
+      "id": "change_my_mind",
+      "name": "Change My Mind",
+      "filename": "change_my_mind.jpg",
+      "description": "Steven Crowder sitting at table with sign",
+      "category": "opinion",
+      "text_positions": {
+        "sign": {"x_percent": 50, "y_percent": 70, "max_width_percent": 40}
+      },
+      "keywords": ["change", "mind", "opinion", "prove", "debate"]
+    },
+    {
+      "id": "this_is_fine",
+      "name": "This Is Fine",
+      "filename": "this_is_fine.jpg",
+      "description": "Dog sitting in burning room saying this is fine",
+      "category": "denial",
       "text_positions": {
         "top": {"y_percent": 5, "max_width_percent": 90},
         "bottom": {"y_percent": 85, "max_width_percent": 90}
       },
-      "keywords": ["norwood", "reaper", "death", "inevitable", "progression"]
+      "keywords": ["fine", "fire", "denial", "cope", "everything fine"]
     },
     {
-      "id": "anagen_phase",
-      "name": "Anagen Phase",
-      "filename": "anagen_phase.png",
-      "description": "Hair cycle diagram meme for science-based humor",
-      "use_cases": ["science", "hair cycle", "anagen", "growth phase", "education"],
+      "id": "batman_slap",
+      "name": "Batman Slapping Robin",
+      "filename": "batman_slap.jpg",
+      "description": "Batman slapping Robin mid-sentence",
+      "category": "reaction",
       "text_positions": {
-        "caption": {"y_percent": 0, "max_width_percent": 95}
+        "robin": {"x_percent": 25, "y_percent": 15, "max_width_percent": 40},
+        "batman": {"x_percent": 75, "y_percent": 15, "max_width_percent": 40}
       },
-      "keywords": ["anagen", "catagen", "telogen", "cycle", "science", "phase"]
+      "keywords": ["batman", "slap", "robin", "shut up", "stop"]
     },
     {
-      "id": "wagmi_hair",
-      "name": "WAGMI Hair",
-      "filename": "wagmi_hair.png",
-      "description": "Optimistic community meme with luscious hair",
-      "use_cases": ["optimism", "community", "wagmi", "hope", "future"],
+      "id": "one_does_not_simply",
+      "name": "One Does Not Simply",
+      "filename": "one_does_not_simply.jpg",
+      "description": "Boromir explaining one does not simply walk into Mordor",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["one does not simply", "mordor", "boromir", "impossible"]
+    },
+    {
+      "id": "surprised_pikachu",
+      "name": "Surprised Pikachu",
+      "filename": "surprised_pikachu.jpg",
+      "description": "Pikachu with surprised face",
+      "category": "reaction",
       "text_positions": {
         "top": {"y_percent": 5, "max_width_percent": 90},
         "bottom": {"y_percent": 85, "max_width_percent": 90}
       },
-      "keywords": ["wagmi", "gmi", "hope", "together", "community"]
+      "keywords": ["pikachu", "surprised", "shock", "obvious", "predictable"]
     },
     {
-      "id": "before_after",
-      "name": "Before/After",
-      "filename": "before_after.png",
-      "description": "Split template for transformation memes",
-      "use_cases": ["transformation", "results", "progress", "before after"],
+      "id": "grus_plan",
+      "name": "Gru's Plan",
+      "filename": "grus_plan.jpg",
+      "description": "Gru presenting plan with unexpected last panel",
+      "category": "plan",
       "text_positions": {
-        "left_label": {"x_percent": 25, "y_percent": 95},
-        "right_label": {"x_percent": 75, "y_percent": 95}
+        "panel1": {"x_percent": 25, "y_percent": 25, "max_width_percent": 40},
+        "panel2": {"x_percent": 75, "y_percent": 25, "max_width_percent": 40},
+        "panel3": {"x_percent": 25, "y_percent": 75, "max_width_percent": 40},
+        "panel4": {"x_percent": 75, "y_percent": 75, "max_width_percent": 40}
       },
-      "keywords": ["before", "after", "transformation", "results", "progress"]
+      "keywords": ["gru", "plan", "backfire", "unexpected", "despicable"]
     },
     {
-      "id": "hair_pepe",
-      "name": "Hair Pepe",
-      "filename": "hair_pepe.png",
-      "description": "Pepe with various hair states for crypto culture memes",
-      "use_cases": ["crypto", "feels", "comfy", "rare", "pepe"],
+      "id": "always_has_been",
+      "name": "Always Has Been",
+      "filename": "always_has_been.png",
+      "description": "Astronauts in space - Wait it's all X? Always has been",
+      "category": "revelation",
+      "text_positions": {
+        "earth_label": {"x_percent": 30, "y_percent": 60},
+        "astronaut1": {"x_percent": 45, "y_percent": 20},
+        "astronaut2": {"x_percent": 80, "y_percent": 30}
+      },
+      "keywords": ["astronaut", "always", "space", "revelation", "gun"]
+    },
+    {
+      "id": "bernie_asking",
+      "name": "Bernie Asking For Support",
+      "filename": "bernie_asking.png",
+      "description": "Bernie Sanders asking for financial support",
+      "category": "asking",
       "text_positions": {
         "top": {"y_percent": 5, "max_width_percent": 90},
         "bottom": {"y_percent": 85, "max_width_percent": 90}
       },
-      "keywords": ["pepe", "feels", "good", "man", "crypto"]
+      "keywords": ["bernie", "asking", "once again", "support"]
     },
     {
-      "id": "expanding_brain_hair",
-      "name": "Expanding Brain (Hair Edition)",
-      "filename": "expanding_brain_hair.png",
-      "description": "Expanding brain meme adapted for hair loss solutions",
-      "use_cases": ["escalation", "levels", "brain", "intelligence", "solutions"],
+      "id": "buff_doge_cheems",
+      "name": "Buff Doge vs Cheems",
+      "filename": "buff_doge_cheems.png",
+      "description": "Strong doge vs weak cheems comparison",
+      "category": "comparison",
       "text_positions": {
-        "row1": {"y_percent": 12, "max_width_percent": 45},
-        "row2": {"y_percent": 37, "max_width_percent": 45},
-        "row3": {"y_percent": 62, "max_width_percent": 45},
-        "row4": {"y_percent": 87, "max_width_percent": 45}
+        "left_top": {"x_percent": 25, "y_percent": 10},
+        "right_top": {"x_percent": 75, "y_percent": 10},
+        "left_bottom": {"x_percent": 25, "y_percent": 85},
+        "right_bottom": {"x_percent": 75, "y_percent": 85}
       },
-      "keywords": ["brain", "expanding", "levels", "intelligence", "ascend"]
+      "keywords": ["doge", "cheems", "buff", "weak", "then vs now"]
+    },
+    {
+      "id": "tuxedo_pooh",
+      "name": "Tuxedo Winnie the Pooh",
+      "filename": "tuxedo_pooh.png",
+      "description": "Regular Pooh vs fancy tuxedo Pooh",
+      "category": "comparison",
+      "text_positions": {
+        "top_right": {"x_percent": 75, "y_percent": 25, "max_width_percent": 45},
+        "bottom_right": {"x_percent": 75, "y_percent": 75, "max_width_percent": 45}
+      },
+      "keywords": ["pooh", "fancy", "sophisticated", "upgrade", "classy"]
+    },
+    {
+      "id": "disaster_girl",
+      "name": "Disaster Girl",
+      "filename": "disaster_girl.jpg",
+      "description": "Girl smiling in front of burning house",
+      "category": "chaos",
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["disaster", "fire", "evil", "smile", "chaos"]
+    },
+    {
+      "id": "success_kid",
+      "name": "Success Kid",
+      "filename": "success_kid.jpg",
+      "description": "Baby with fist pump celebrating success",
+      "category": "success",
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["success", "win", "yes", "celebrate", "victory"]
+    },
+    {
+      "id": "hide_pain_harold",
+      "name": "Hide the Pain Harold",
+      "filename": "hide_pain_harold.jpg",
+      "description": "Old man with pained smile hiding suffering",
+      "category": "pain",
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["harold", "pain", "hide", "smile", "suffering", "cope"]
+    },
+    {
+      "id": "mocking_spongebob",
+      "name": "Mocking Spongebob",
+      "filename": "mocking_spongebob.jpg",
+      "description": "Spongebob in mocking pose with alternating caps text",
+      "category": "mocking",
+      "text_positions": {
+        "top": {"y_percent": 5, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["spongebob", "mocking", "sarcasm", "mimic"]
+    },
+    {
+      "id": "is_this_pigeon",
+      "name": "Is This a Pigeon?",
+      "filename": "is_this_pigeon.jpg",
+      "description": "Anime guy pointing at butterfly asking if its a pigeon",
+      "category": "confusion",
+      "text_positions": {
+        "butterfly": {"x_percent": 60, "y_percent": 20},
+        "guy": {"x_percent": 30, "y_percent": 80},
+        "bottom": {"y_percent": 90, "max_width_percent": 90}
+      },
+      "keywords": ["pigeon", "butterfly", "confused", "wrong", "misidentify"]
+    },
+    {
+      "id": "woman_yelling_cat",
+      "name": "Woman Yelling at Cat",
+      "filename": "woman_yelling_cat.jpg",
+      "description": "Woman pointing and yelling at confused cat at dinner table",
+      "category": "argument",
+      "text_positions": {
+        "left": {"x_percent": 25, "y_percent": 10, "max_width_percent": 45},
+        "right": {"x_percent": 75, "y_percent": 10, "max_width_percent": 45}
+      },
+      "keywords": ["woman", "cat", "yelling", "argument", "confused"]
     }
   ],
+  "categories": {
+    "comparison": "Compare two things (Drake, Distracted BF, Buff Doge)",
+    "choice": "Hard decisions (Two Buttons)",
+    "escalation": "Increasingly extreme takes (Expanding Brain)",
+    "reaction": "React to something (Surprised Pikachu, Batman Slap)",
+    "opinion": "Hot takes (Change My Mind)",
+    "denial": "Cope and denial (This is Fine, Hide Pain Harold)",
+    "plan": "Plans going wrong (Gru's Plan)",
+    "revelation": "Surprising truths (Always Has Been)",
+    "classic": "Timeless formats (One Does Not Simply)"
+  },
   "default_fonts": {
     "impact": "Impact",
-    "arial": "Arial",
-    "comic_sans": "Comic Sans MS"
+    "arial": "Arial Black",
+    "comic": "Comic Sans MS"
   },
   "color_schemes": {
     "classic": {
       "text": "#FFFFFF",
-      "outline": "#000000"
+      "outline": "#000000",
+      "outline_width": 3
     },
     "hairdao": {
-      "primary": "#7C3AED",
+      "primary": "#10b981",
       "secondary": "#06B6D4",
       "text": "#FFFFFF"
     }
