@@ -17,6 +17,3 @@ python-multipart>=0.0.6
 
 # Production server
 gunicorn>=21.0.0
-
-# Optional: for better text rendering
-# pillow-heif>=0.13.0

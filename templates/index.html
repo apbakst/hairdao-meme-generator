@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} - HairDAO</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-panel: #16213e;
+            --bg-card: #0f3460;
+            --bg-input: #0a0a15;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6a6a7a;
+            --accent: #00d9ff;
+            --accent-hover: #00f0ff;
+            --success: #00c853;
+            --border: #2a2a4a;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--bg-panel);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-text {
+            color: var(--text-primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Main Layout */
+        .main-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        /* Left Panel - Templates */
+        .templates-panel {
+            width: 380px;
+            min-width: 300px;
+            background: var(--bg-panel);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .templates-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        
+        .templates-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .template-count {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .templates-grid {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            align-content: start;
+        }
+        
+        .template-item {
+            cursor: pointer;
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--bg-card);
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: 2px solid transparent;
+        }
+        
+        .template-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .template-item.selected {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.3);
+        }
+        
+        .template-thumb {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .template-name {
+            padding: 0.4rem 0.5rem;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: var(--bg-input);
+        }
+        
+        /* Right Panel - Editor */
+        .editor-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-dark);
+            overflow: hidden;
+        }
+        
+        .editor-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            overflow-y: auto;
+        }
+        
+        /* Preview Section */
+        .preview-wrapper {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .preview-container {
+            position: relative;
+            background: var(--bg-panel);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+        
+        .preview-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        
+        .preview-placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        .preview-placeholder-text {
+            font-size: 1rem;
+        }
+        
+        .preview-image {
+            width: 100%;
+            display: block;
+        }
+        
+        .loading-spinner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loading-spinner.active {
+            display: flex;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Controls Section */
+        .controls-wrapper {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .text-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        
+        .input-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .text-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+        
+        .text-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .text-input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        /* Buttons */
+        .button-row {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-generate {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+        
+        .btn-generate:hover:not(:disabled) {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        
+        .btn-download {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-download:hover:not(:disabled) {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        /* Info Section */
+        .info-section {
+            margin-top: 1.25rem;
+            padding: 1rem;
+            background: var(--bg-panel);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .info-title {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* No Results */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-muted);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .templates-panel {
+                width: 100%;
+                max-height: 40vh;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .templates-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .editor-panel {
+                flex: 1;
+                overflow-y: auto;
+            }
+            
+            .editor-content {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .templates-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .header {
+                padding: 0.5rem 1rem;
+            }
+            
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .button-row {
+                flex-direction: column;
+            }
+        }
+        
+        /* Scrollbar Styling */
+        .templates-grid::-webkit-scrollbar,
+        .editor-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .templates-grid::-webkit-scrollbar-track,
+        .editor-content::-webkit-scrollbar-track {
+            background: var(--bg-input);
+        }
+        
+        .templates-grid::-webkit-scrollbar-thumb,
+        .editor-content::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        
+        .templates-grid::-webkit-scrollbar-thumb:hover,
+        .editor-content::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">
+            💇 <span class="logo-text">HairDAO Meme Generator</span>
+        </a>
+        <nav class="nav-links">
+            <a href="/gallery">Gallery</a>
+        </nav>
+    </header>
+    
+    <main class="main-container">
+        <!-- Left Panel: Template Gallery -->
+        <aside class="templates-panel">
+            <div class="templates-header">
+                <div class="templates-title">
+                    Templates <span class="template-count" id="templateCount"></span>
+                </div>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search meme templates..." autocomplete="off">
+                </div>
+            </div>
+            <div class="templates-grid" id="templateGrid">
+                <!-- Templates loaded via JS -->
+            </div>
+        </aside>
+        
+        <!-- Right Panel: Editor -->
+        <section class="editor-panel">
+            <div class="editor-content">
+                <!-- Preview -->
+                <div class="preview-wrapper">
+                    <div class="preview-container" id="previewContainer">
+                        <div class="preview-placeholder" id="previewPlaceholder">
+                            <div class="preview-placeholder-icon">🖼️</div>
+                            <div class="preview-placeholder-text">Select a template to start creating</div>
+                        </div>
+                        <img src="" alt="Meme Preview" class="preview-image" id="previewImage" style="display: none;">
+                        <div class="loading-spinner" id="loadingSpinner">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="controls-wrapper" id="controlsWrapper">
+                    <div class="text-inputs">
+                        <div class="input-group">
+                            <label class="input-label" for="topText">Top Text</label>
+                            <input type="text" id="topText" class="text-input" placeholder="Enter top text..." disabled>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="bottomText">Bottom Text</label>
+                            <input type="text" id="bottomText" class="text-input" placeholder="Enter bottom text..." disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="button-row">
+                        <button class="btn btn-generate" id="generateBtn" disabled>
+                            ⚡ Generate Meme
+                        </button>
+                        <button class="btn btn-download" id="downloadBtn" disabled>
+                            ⬇️ Download
+                        </button>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-title">💡 Tips</div>
+                        <div>Text is automatically UPPERCASE for classic meme style. Long text wraps automatically. Press Enter to generate quickly!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // State
+        let currentTemplate = null;
+        let hasGenerated = false;
+        
+        // DOM Elements
+        const templateGrid = document.getElementById('templateGrid');
+        const templateCount = document.getElementById('templateCount');
+        const searchInput = document.getElementById('searchInput');
+        const previewPlaceholder = document.getElementById('previewPlaceholder');
+        const previewImage = document.getElementById('previewImage');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const topText = document.getElementById('topText');
+        const bottomText = document.getElementById('bottomText');
+        const generateBtn = document.getElementById('generateBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        
+        // Debounce helper
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // Load templates
+        async function loadTemplates(search = '') {
+            try {
+                const url = search 
+                    ? `/api/templates?search=${encodeURIComponent(search)}`
+                    : '/api/templates';
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                renderTemplates(data.templates);
+                templateCount.textContent = `(${data.count})`;
+            } catch (error) {
+                console.error('Failed to load templates:', error);
+                templateGrid.innerHTML = '<div class="no-results">Failed to load templates</div>';
+            }
+        }
+        
+        // Render templates
+        function renderTemplates(templates) {
+            if (templates.length === 0) {
+                templateGrid.innerHTML = '<div class="no-results">No templates found</div>';
+                return;
+            }
+            
+            templateGrid.innerHTML = templates.map(t => `
+                <div class="template-item${currentTemplate === t.filename ? ' selected' : ''}" 
+                     data-template="${t.filename}" 
+                     data-name="${t.name}">
+                    <img src="${t.url}" alt="${t.name}" class="template-thumb" loading="lazy">
+                    <div class="template-name">${t.name}</div>
+                </div>
+            `).join('');
+            
+            // Add click handlers
+            document.querySelectorAll('.template-item').forEach(item => {
+                item.addEventListener('click', () => selectTemplate(item));
+            });
+        }
+        
+        // Select template
+        function selectTemplate(item) {
+            const templateFilename = item.dataset.template;
+            const templateName = item.dataset.name;
+            
+            // Update selection UI
+            document.querySelectorAll('.template-item').forEach(el => el.classList.remove('selected'));
+            item.classList.add('selected');
+            
+            // Update state
+            currentTemplate = templateFilename;
+            hasGenerated = false;
+            
+            // Show preview
+            previewPlaceholder.style.display = 'none';
+            previewImage.style.display = 'block';
+            previewImage.src = `/meme-templates/${templateFilename}`;
+            
+            // Enable inputs
+            topText.disabled = false;
+            bottomText.disabled = false;
+            generateBtn.disabled = false;
+            downloadBtn.disabled = true;
+            
+            // Focus on top text
+            topText.focus();
+        }
+        
+        // Generate meme
+        async function generateMeme() {
+            if (!currentTemplate) return;
+            
+            const top = topText.value.trim();
+            const bottom = bottomText.value.trim();
+            
+            loadingSpinner.classList.add('active');
+            generateBtn.disabled = true;
+            
+            try {
+                const params = new URLSearchParams({
+                    template: currentTemplate,
+                    top: top,
+                    bottom: bottom
+                });
+                
+                const url = `/api/generate?${params.toString()}&t=${Date.now()}`;
+                
+                const img = new Image();
+                img.onload = () => {
+                    previewImage.src = img.src;
+                    loadingSpinner.classList.remove('active');
+                    generateBtn.disabled = false;
+                    downloadBtn.disabled = false;
+                    hasGenerated = true;
+                };
+                img.onerror = () => {
+                    loadingSpinner.classList.remove('active');
+                    generateBtn.disabled = false;
+                    alert('Failed to generate meme');
+                };
+                img.src = url;
+                
+            } catch (error) {
+                console.error('Generate error:', error);
+                loadingSpinner.classList.remove('active');
+                generateBtn.disabled = false;
+            }
+        }
+        
+        // Download meme
+        function downloadMeme() {
+            if (!currentTemplate) return;
+            
+            const top = topText.value.trim();
+            const bottom = bottomText.value.trim();
+            
+            const params = new URLSearchParams({
+                template: currentTemplate,
+                top: top,
+                bottom: bottom
+            });
+            
+            window.location.href = `/api/download?${params.toString()}`;
+        }
+        
+        // Event Listeners
+        searchInput.addEventListener('input', debounce((e) => {
+            loadTemplates(e.target.value.trim());
+        }, 300));
+        
+        generateBtn.addEventListener('click', generateMeme);
+        downloadBtn.addEventListener('click', downloadMeme);
+        
+        // Enter key to generate
+        topText.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') generateMeme();
+        });
+        bottomText.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') generateMeme();
+        });
+        
+        // Initial load
+        loadTemplates();
+    </script>
+</body>
+</html>
