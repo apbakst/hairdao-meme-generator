@@ -50,7 +50,7 @@
         "row3": {"x_percent": 25, "y_percent": 62, "max_width_percent": 45},
         "row4": {"x_percent": 25, "y_percent": 87, "max_width_percent": 45}
       },
-      "keywords": ["brain", "expanding", "levels", "intelligence", "ascend", "galaxy brain"]
+      "keywords": ["brain", "expanding", "levels", "intelligence", "galaxy brain"]
     },
     {
       "id": "change_my_mind",
@@ -141,7 +141,7 @@
     {
       "id": "bernie_asking",
       "name": "Bernie Asking For Support",
-      "filename": "bernie_asking.png",
+      "filename": "bernie_asking.jpg",
       "description": "Bernie Sanders asking for financial support",
       "category": "asking",
       "text_positions": {
@@ -248,18 +248,1565 @@
         "right": {"x_percent": 75, "y_percent": 10, "max_width_percent": 45}
       },
       "keywords": ["woman", "cat", "yelling", "argument", "confused"]
+    },
+    {
+      "id": "philosoraptor",
+      "name": "Philosoraptor",
+      "filename": "philosoraptor.jpg",
+      "description": "Velociraptor pondering philosophical questions",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["philosoraptor", "thinking", "philosophy", "question", "wonder"]
+    },
+    {
+      "id": "bad_luck_brian",
+      "name": "Bad Luck Brian",
+      "filename": "bad_luck_brian.jpg",
+      "description": "Kid with unfortunate luck",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["bad luck", "brian", "unfortunate", "unlucky"]
+    },
+    {
+      "id": "good_guy_greg",
+      "name": "Good Guy Greg",
+      "filename": "good_guy_greg.jpg",
+      "description": "Friendly guy who does nice things",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["good guy", "greg", "nice", "friendly", "wholesome"]
+    },
+    {
+      "id": "scumbag_steve",
+      "name": "Scumbag Steve",
+      "filename": "scumbag_steve.jpg",
+      "description": "Guy who does scummy things",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["scumbag", "steve", "jerk", "annoying"]
+    },
+    {
+      "id": "futurama_fry",
+      "name": "Futurama Fry / Not Sure If",
+      "filename": "futurama_fry.jpg",
+      "description": "Fry squinting suspiciously",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["fry", "not sure", "suspicious", "squint", "futurama"]
+    },
+    {
+      "id": "ancient_aliens",
+      "name": "Ancient Aliens",
+      "filename": "ancient_aliens.jpg",
+      "description": "Guy with crazy hair saying aliens did it",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["aliens", "ancient", "conspiracy", "crazy"]
+    },
+    {
+      "id": "grumpy_cat",
+      "name": "Grumpy Cat",
+      "filename": "grumpy_cat.jpg",
+      "description": "Cat with permanent grumpy face",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["grumpy", "cat", "no", "hate", "angry"]
+    },
+    {
+      "id": "first_world_problems",
+      "name": "First World Problems",
+      "filename": "first_world_problems.jpg",
+      "description": "Crying woman with trivial problems",
+      "category": "relatable",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["first world", "problems", "crying", "trivial"]
+    },
+    {
+      "id": "confession_bear",
+      "name": "Confession Bear",
+      "filename": "confession_bear.jpg",
+      "description": "Bear confessing something embarrassing",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["confession", "bear", "admit", "secret", "embarrassing"]
+    },
+    {
+      "id": "insanity_wolf",
+      "name": "Insanity Wolf",
+      "filename": "insanity_wolf.jpg",
+      "description": "Wolf with insane suggestions",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["insanity", "wolf", "crazy", "extreme", "dangerous"]
+    },
+    {
+      "id": "socially_awkward_penguin",
+      "name": "Socially Awkward Penguin",
+      "filename": "socially_awkward_penguin.jpg",
+      "description": "Penguin in awkward social situations",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["awkward", "penguin", "social", "cringe", "embarrassing"]
+    },
+    {
+      "id": "doge",
+      "name": "Doge",
+      "filename": "doge.jpg",
+      "description": "Shiba Inu dog with comic sans text",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["doge", "shiba", "wow", "such", "very", "much"]
+    },
+    {
+      "id": "conspiracy_keanu",
+      "name": "Conspiracy Keanu",
+      "filename": "conspiracy_keanu.jpg",
+      "description": "Keanu Reeves looking paranoid",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["conspiracy", "keanu", "what if", "paranoid"]
+    },
+    {
+      "id": "the_most_interesting_man",
+      "name": "The Most Interesting Man",
+      "filename": "the_most_interesting_man.jpg",
+      "description": "I don't always X, but when I do Y",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["interesting", "man", "dont always", "dos equis"]
+    },
+    {
+      "id": "skeptical_third_world_kid",
+      "name": "Skeptical Third World Kid",
+      "filename": "skeptical_third_world_kid.jpg",
+      "description": "Kid looking skeptical",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["skeptical", "kid", "really", "doubt"]
+    },
+    {
+      "id": "epic_handshake",
+      "name": "Epic Handshake",
+      "filename": "epic_handshake.jpg",
+      "description": "Two arms clasping hands in agreement",
+      "category": "comparison",
+      "text_positions": {
+        "left_arm": {"x_percent": 15, "y_percent": 50},
+        "right_arm": {"x_percent": 85, "y_percent": 50},
+        "center": {"x_percent": 50, "y_percent": 50}
+      },
+      "keywords": ["handshake", "agreement", "unity", "predator", "same"]
+    },
+    {
+      "id": "roll_safe",
+      "name": "Roll Safe / Think About It",
+      "filename": "roll_safe.jpg",
+      "description": "Guy tapping head with clever idea",
+      "category": "modern",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["roll safe", "think", "smart", "clever", "tapping head"]
+    },
+    {
+      "id": "american_chopper",
+      "name": "American Chopper Argument",
+      "filename": "american_chopper.jpg",
+      "description": "Father and son arguing intensely",
+      "category": "argument",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 10},
+        "panel2": {"x_percent": 50, "y_percent": 30},
+        "panel3": {"x_percent": 50, "y_percent": 50},
+        "panel4": {"x_percent": 50, "y_percent": 70},
+        "panel5": {"x_percent": 50, "y_percent": 90}
+      },
+      "keywords": ["argument", "yelling", "fight", "chopper", "dad"]
+    },
+    {
+      "id": "thinking_black_guy",
+      "name": "Thinking Black Guy",
+      "filename": "thinking_black_guy.jpg",
+      "description": "Guy tapping forehead thinking",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["thinking", "smart", "idea", "brain"]
+    },
+    {
+      "id": "but_thats_none_of_my_business",
+      "name": "But That's None of My Business",
+      "filename": "but_thats_none_of_my_business.jpg",
+      "description": "Kermit sipping tea minding his business",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["kermit", "tea", "none of my business", "shade"]
+    },
+    {
+      "id": "waiting_skeleton",
+      "name": "Waiting Skeleton",
+      "filename": "waiting_skeleton.jpg",
+      "description": "Skeleton that waited too long",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["waiting", "skeleton", "forever", "still waiting"]
+    },
+    {
+      "id": "brace_yourself",
+      "name": "Brace Yourself",
+      "filename": "brace_yourself.jpg",
+      "description": "Ned Stark warning something is coming",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["brace", "coming", "winter", "ned stark", "game of thrones"]
+    },
+    {
+      "id": "left_exit_ramp",
+      "name": "Left Exit 12 Off Ramp",
+      "filename": "left_exit_ramp.jpg",
+      "description": "Car swerving to take exit at last second",
+      "category": "choice",
+      "text_positions": {
+        "straight": {"x_percent": 60, "y_percent": 20},
+        "exit": {"x_percent": 25, "y_percent": 30},
+        "car": {"x_percent": 50, "y_percent": 70}
+      },
+      "keywords": ["exit", "swerve", "choice", "car", "ramp"]
+    },
+    {
+      "id": "matrix_morpheus",
+      "name": "Matrix Morpheus / What If I Told You",
+      "filename": "matrix_morpheus.jpg",
+      "description": "Morpheus explaining reality",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["matrix", "morpheus", "what if i told you", "truth"]
+    },
+    {
+      "id": "unsettled_tom",
+      "name": "Unsettled Tom",
+      "filename": "unsettled_tom.png",
+      "description": "Tom from Tom and Jerry looking disturbed",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["tom", "disturbed", "unsettled", "wtf", "concerned"]
+    },
+    {
+      "id": "they_had_us_first_half",
+      "name": "They Had Us In The First Half",
+      "filename": "they_had_us_first_half.jpg",
+      "description": "Not gonna lie, they had us",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["first half", "not gonna lie", "had us", "twist"]
+    },
+    {
+      "id": "outstanding_move",
+      "name": "Outstanding Move",
+      "filename": "outstanding_move.jpg",
+      "description": "Chess move labeled as outstanding",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["outstanding", "move", "chess", "smart", "big brain"]
+    },
+    {
+      "id": "shut_up_and_take_my_money",
+      "name": "Shut Up And Take My Money",
+      "filename": "shut_up_and_take_my_money.jpg",
+      "description": "Fry throwing money at screen",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["shut up", "take my money", "fry", "want", "buy"]
+    },
+    {
+      "id": "michael_jackson_popcorn",
+      "name": "Michael Jackson Popcorn",
+      "filename": "michael_jackson_popcorn.jpg",
+      "description": "MJ eating popcorn watching drama",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["popcorn", "watching", "drama", "thriller", "mj"]
+    },
+    {
+      "id": "spongebob_rainbow",
+      "name": "Spongebob Rainbow / Imagination",
+      "filename": "spongebob_rainbow.jpg",
+      "description": "Spongebob making rainbow with hands",
+      "category": "reaction",
+      "text_positions": {
+        "rainbow": {"x_percent": 50, "y_percent": 30},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["spongebob", "rainbow", "imagination", "magic"]
+    },
+    {
+      "id": "white_guy_blinking",
+      "name": "White Guy Blinking",
+      "filename": "white_guy_blinking.jpg",
+      "description": "Guy blinking in disbelief",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["blinking", "confused", "wtf", "disbelief"]
+    },
+    {
+      "id": "clown_putting_on_makeup",
+      "name": "Clown Putting On Makeup",
+      "filename": "clown_putting_on_makeup.jpg",
+      "description": "Stages of becoming a clown",
+      "category": "escalation",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 12},
+        "panel2": {"x_percent": 50, "y_percent": 37},
+        "panel3": {"x_percent": 50, "y_percent": 62},
+        "panel4": {"x_percent": 50, "y_percent": 87}
+      },
+      "keywords": ["clown", "makeup", "stages", "becoming", "foolish"]
+    },
+    {
+      "id": "trade_offer",
+      "name": "Trade Offer",
+      "filename": "trade_offer.png",
+      "description": "I receive / You receive trade offer",
+      "category": "comparison",
+      "text_positions": {
+        "i_receive": {"x_percent": 25, "y_percent": 50},
+        "you_receive": {"x_percent": 75, "y_percent": 50}
+      },
+      "keywords": ["trade", "offer", "receive", "deal"]
+    },
+    {
+      "id": "baby_yoda",
+      "name": "Baby Yoda / Grogu",
+      "filename": "baby_yoda.jpg",
+      "description": "Cute baby Yoda from Mandalorian",
+      "category": "wholesome",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["baby yoda", "grogu", "mandalorian", "cute", "star wars"]
+    },
+    {
+      "id": "evil_kermit",
+      "name": "Evil Kermit",
+      "filename": "evil_kermit.jpg",
+      "description": "Kermit being tempted by hooded evil Kermit",
+      "category": "comparison",
+      "text_positions": {
+        "kermit": {"x_percent": 25, "y_percent": 50},
+        "evil_kermit": {"x_percent": 75, "y_percent": 50}
+      },
+      "keywords": ["kermit", "evil", "temptation", "dark side", "me vs me"]
+    },
+    {
+      "id": "mr_krabs_blur",
+      "name": "Mr Krabs Blur",
+      "filename": "mr_krabs_blur.jpg",
+      "description": "Mr Krabs looking around confused",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["mr krabs", "confused", "blur", "dizzy", "anxiety"]
+    },
+    {
+      "id": "saitama_ok",
+      "name": "Saitama OK",
+      "filename": "saitama_ok.jpg",
+      "description": "One Punch Man saying ok with blank face",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["saitama", "ok", "one punch man", "bored", "meh"]
+    },
+    {
+      "id": "arthur_fist",
+      "name": "Arthur Fist",
+      "filename": "arthur_fist.jpg",
+      "description": "Arthur clenching fist in anger",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["arthur", "fist", "angry", "frustrated", "annoyed"]
+    },
+    {
+      "id": "sad_kermit",
+      "name": "Sad Kermit Window",
+      "filename": "sad_kermit.jpg",
+      "description": "Kermit looking sad out the window",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["kermit", "sad", "window", "rain", "depressed"]
+    },
+    {
+      "id": "panik_kalm_panik",
+      "name": "Panik Kalm Panik",
+      "filename": "panik_kalm_panik.png",
+      "description": "Meme man going from panic to calm to panic",
+      "category": "escalation",
+      "text_positions": {
+        "panel1": {"x_percent": 30, "y_percent": 20},
+        "panel2": {"x_percent": 30, "y_percent": 50},
+        "panel3": {"x_percent": 30, "y_percent": 80}
+      },
+      "keywords": ["panik", "kalm", "meme man", "anxiety", "stress"]
+    },
+    {
+      "id": "hard_to_swallow_pills",
+      "name": "Hard To Swallow Pills",
+      "filename": "hard_to_swallow_pills.jpg",
+      "description": "Bottle of hard truths to accept",
+      "category": "opinion",
+      "text_positions": {
+        "bottle": {"x_percent": 50, "y_percent": 70, "max_width_percent": 60}
+      },
+      "keywords": ["pills", "hard to swallow", "truth", "accept", "reality"]
+    },
+    {
+      "id": "drake_hat",
+      "name": "Drake Hat / Say The Line",
+      "filename": "drake_hat.jpg",
+      "description": "Drake wearing hat looking different ways",
+      "category": "comparison",
+      "text_positions": {
+        "top": {"y_percent": 25, "max_width_percent": 90},
+        "bottom": {"y_percent": 75, "max_width_percent": 90}
+      },
+      "keywords": ["drake", "hat", "comparison", "better"]
+    },
+    {
+      "id": "scroll_of_truth",
+      "name": "Scroll of Truth",
+      "filename": "scroll_of_truth.jpg",
+      "description": "Finding scroll with unwanted truth and throwing it away",
+      "category": "denial",
+      "text_positions": {
+        "scroll": {"x_percent": 50, "y_percent": 40, "max_width_percent": 40}
+      },
+      "keywords": ["scroll", "truth", "nyeh", "deny", "throw"]
+    },
+    {
+      "id": "dont_you_squidward",
+      "name": "Don't You Squidward",
+      "filename": "dont_you_squidward.jpg",
+      "description": "Spongebob asking don't you Squidward",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["squidward", "spongebob", "dont you", "smug"]
+    },
+    {
+      "id": "hes_right_you_know",
+      "name": "He's Right You Know",
+      "filename": "hes_right_you_know.jpg",
+      "description": "Morgan Freeman saying he's right",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["right", "morgan freeman", "correct", "agree"]
+    },
+    {
+      "id": "will_smith_slap",
+      "name": "Will Smith Slap",
+      "filename": "will_smith_slap.png",
+      "description": "Will Smith slapping Chris Rock at Oscars",
+      "category": "modern",
+      "text_positions": {
+        "will": {"x_percent": 25, "y_percent": 50},
+        "chris": {"x_percent": 75, "y_percent": 50}
+      },
+      "keywords": ["will smith", "slap", "chris rock", "oscars"]
+    },
+    {
+      "id": "monkey_puppet",
+      "name": "Monkey Puppet",
+      "filename": "monkey_puppet.jpg",
+      "description": "Puppet monkey looking away awkwardly",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["monkey", "puppet", "awkward", "side eye", "nervous"]
+    },
+    {
+      "id": "oprah_you_get",
+      "name": "Oprah You Get",
+      "filename": "oprah_you_get.jpg",
+      "description": "Oprah giving things to everyone",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["oprah", "you get", "everyone gets", "giving"]
+    },
+    {
+      "id": "aint_nobody",
+      "name": "Ain't Nobody Got Time For That",
+      "filename": "aint_nobody.jpg",
+      "description": "Sweet Brown saying ain't nobody got time",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["aint nobody", "time", "no time", "busy"]
+    },
+    {
+      "id": "who_killed_hannibal",
+      "name": "Who Killed Hannibal",
+      "filename": "who_killed_hannibal.jpg",
+      "description": "Eric Andre shooting Hannibal and asking who did it",
+      "category": "irony",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 20},
+        "panel2": {"x_percent": 50, "y_percent": 60}
+      },
+      "keywords": ["hannibal", "eric andre", "shot", "blame", "irony"]
+    },
+    {
+      "id": "leonardo_toast",
+      "name": "Leonardo DiCaprio Toast",
+      "filename": "leo_cheers.jpg",
+      "description": "Leo raising glass in a toast",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["leo", "toast", "cheers", "gatsby", "celebrate"]
+    },
+    {
+      "id": "anakin_padme",
+      "name": "Anakin Padme 4 Panel",
+      "filename": "anakin_padme.png",
+      "description": "Anakin and Padme with concerning revelation",
+      "category": "modern",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 12},
+        "panel2": {"x_percent": 50, "y_percent": 37},
+        "panel3": {"x_percent": 50, "y_percent": 62},
+        "panel4": {"x_percent": 50, "y_percent": 87}
+      },
+      "keywords": ["anakin", "padme", "star wars", "right", "concerning"]
+    },
+    {
+      "id": "sad_pablo_escobar",
+      "name": "Sad Pablo Escobar",
+      "filename": "sad_pablo_escobar.jpg",
+      "description": "Pablo Escobar waiting alone",
+      "category": "reaction",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 20},
+        "panel2": {"x_percent": 50, "y_percent": 50},
+        "panel3": {"x_percent": 50, "y_percent": 80}
+      },
+      "keywords": ["pablo", "escobar", "waiting", "alone", "sad"]
+    },
+    {
+      "id": "megamind_peeking",
+      "name": "Megamind Peeking",
+      "filename": "megamind_peeking.png",
+      "description": "Megamind peeking around corner",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["megamind", "peeking", "curious", "sneaky"]
+    },
+    {
+      "id": "megamind_no_bitches",
+      "name": "Megamind No Bitches",
+      "filename": "megamind_no_bitches.jpg",
+      "description": "Megamind asking about lack of companions",
+      "category": "dark_humor",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["megamind", "no", "bitches", "maidens"]
+    },
+    {
+      "id": "same_picture",
+      "name": "They're The Same Picture",
+      "filename": "same_picture.jpg",
+      "description": "Pam from The Office saying pictures are the same",
+      "category": "comparison",
+      "text_positions": {
+        "left_pic": {"x_percent": 30, "y_percent": 25},
+        "right_pic": {"x_percent": 70, "y_percent": 25},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["same", "picture", "pam", "office", "identical"]
+    },
+    {
+      "id": "you_guys_getting_paid",
+      "name": "You Guys Are Getting Paid?",
+      "filename": "you_guys_getting_paid.png",
+      "description": "We're the Millers scene asking about payment",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["paid", "getting paid", "free", "work"]
+    },
+    {
+      "id": "trophy_if_i_had_one",
+      "name": "This Is Where I'd Put My Trophy",
+      "filename": "trophy_if_i_had_one.jpg",
+      "description": "Timmy's Dad showing empty trophy case",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["trophy", "if i had one", "fairly oddparents", "empty"]
+    },
+    {
+      "id": "absolute_cinema",
+      "name": "Absolute Cinema",
+      "filename": "absolute_cinema.png",
+      "description": "This is absolute cinema reaction",
+      "category": "modern",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["cinema", "absolute", "peak", "masterpiece"]
+    },
+    {
+      "id": "clown_applying_makeup",
+      "name": "Clown Applying Makeup",
+      "filename": "clown_applying_makeup.jpg",
+      "description": "Progressive stages of becoming a clown",
+      "category": "escalation",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 12},
+        "panel2": {"x_percent": 50, "y_percent": 37},
+        "panel3": {"x_percent": 50, "y_percent": 62},
+        "panel4": {"x_percent": 50, "y_percent": 87}
+      },
+      "keywords": ["clown", "makeup", "fool", "progression"]
+    },
+    {
+      "id": "squidward_window",
+      "name": "Squidward Window",
+      "filename": "squidward_window.jpg",
+      "description": "Squidward looking out window jealously",
+      "category": "reaction",
+      "text_positions": {
+        "outside": {"x_percent": 75, "y_percent": 40},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["squidward", "window", "jealous", "watching", "fomo"]
+    },
+    {
+      "id": "pawn_stars_best",
+      "name": "Pawn Stars Best I Can Do",
+      "filename": "pawn_stars_best.jpg",
+      "description": "Rick from Pawn Stars lowballing",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["pawn stars", "best i can do", "lowball", "offer"]
+    },
+    {
+      "id": "laughing_leo",
+      "name": "Laughing Leo",
+      "filename": "laughing_leo.png",
+      "description": "Leonardo DiCaprio laughing and pointing",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["leo", "laughing", "pointing", "django"]
+    },
+    {
+      "id": "they_dont_know",
+      "name": "They Don't Know",
+      "filename": "they_dont_know.png",
+      "description": "Person at party thinking they don't know",
+      "category": "relatable",
+      "text_positions": {
+        "thought": {"x_percent": 75, "y_percent": 30, "max_width_percent": 40}
+      },
+      "keywords": ["they dont know", "party", "alone", "introverted"]
+    },
+    {
+      "id": "boardroom_meeting",
+      "name": "Boardroom Meeting Suggestion",
+      "filename": "boardroom_meeting.jpg",
+      "description": "Person gets thrown out window for suggestion",
+      "category": "office",
+      "text_positions": {
+        "person1": {"x_percent": 20, "y_percent": 25},
+        "person2": {"x_percent": 50, "y_percent": 25},
+        "person3": {"x_percent": 80, "y_percent": 25},
+        "boss": {"x_percent": 50, "y_percent": 75}
+      },
+      "keywords": ["boardroom", "meeting", "thrown out", "suggestion", "window"]
+    },
+    {
+      "id": "bell_curve",
+      "name": "Bell Curve / IQ Meme",
+      "filename": "bell_curve.png",
+      "description": "Bell curve with extremes agreeing",
+      "category": "comparison",
+      "text_positions": {
+        "left": {"x_percent": 15, "y_percent": 50},
+        "center": {"x_percent": 50, "y_percent": 50},
+        "right": {"x_percent": 85, "y_percent": 50}
+      },
+      "keywords": ["bell curve", "iq", "midwit", "smart", "dumb"]
+    },
+    {
+      "id": "look_at_me",
+      "name": "Look At Me, I'm The Captain Now",
+      "filename": "look_at_me.jpg",
+      "description": "Captain Phillips scene about being in charge",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["look at me", "captain", "now", "in charge"]
+    },
+    {
+      "id": "soldier_protecting_child",
+      "name": "Soldier Protecting Sleeping Child",
+      "filename": "soldier_protecting_child.jpg",
+      "description": "Soldier protecting child from dangers",
+      "category": "wholesome",
+      "text_positions": {
+        "soldier": {"x_percent": 50, "y_percent": 20},
+        "child": {"x_percent": 50, "y_percent": 60},
+        "dangers": {"x_percent": 50, "y_percent": 10}
+      },
+      "keywords": ["soldier", "protect", "child", "sleeping", "shield"]
+    },
+    {
+      "id": "sleeping_shaq",
+      "name": "Sleeping Shaq",
+      "filename": "sleeping_shaq.jpg",
+      "description": "Shaq sleeping then waking up alert",
+      "category": "comparison",
+      "text_positions": {
+        "top": {"y_percent": 25, "max_width_percent": 90},
+        "bottom": {"y_percent": 75, "max_width_percent": 90}
+      },
+      "keywords": ["shaq", "sleeping", "awake", "alert", "interest"]
+    },
+    {
+      "id": "anime_terminator",
+      "name": "Anime Girl Hiding From Terminator",
+      "filename": "anime_terminator.jpg",
+      "description": "Anime girl hiding from Terminator robot",
+      "category": "modern",
+      "text_positions": {
+        "terminator": {"x_percent": 60, "y_percent": 30},
+        "girl": {"x_percent": 30, "y_percent": 70}
+      },
+      "keywords": ["anime", "terminator", "hiding", "fear", "robot"]
+    },
+    {
+      "id": "spiderman_triple",
+      "name": "Spiderman Pointing Triple",
+      "filename": "spiderman_triple.jpg",
+      "description": "Three Spidermen pointing at each other",
+      "category": "comparison",
+      "text_positions": {
+        "left": {"x_percent": 20, "y_percent": 50},
+        "center": {"x_percent": 50, "y_percent": 50},
+        "right": {"x_percent": 80, "y_percent": 50}
+      },
+      "keywords": ["spiderman", "pointing", "same", "identical", "blame"]
+    },
+    {
+      "id": "nut_button",
+      "name": "Nut Button / Blank Nut Button",
+      "filename": "nut_button.jpg",
+      "description": "Person slamming button aggressively",
+      "category": "reaction",
+      "text_positions": {
+        "button": {"x_percent": 50, "y_percent": 50}
+      },
+      "keywords": ["button", "nut", "slam", "smash", "press"]
+    },
+    {
+      "id": "where_monkey",
+      "name": "Where Monkey / Where Banana",
+      "filename": "where_monkey.png",
+      "description": "Monkey asking where something is",
+      "category": "surreal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["where", "monkey", "banana", "ape", "question"]
+    },
+    {
+      "id": "trump_bill_signing",
+      "name": "Trump Bill Signing",
+      "filename": "trump_bill_signing.jpg",
+      "description": "Trump showing signed document",
+      "category": "meta",
+      "text_positions": {
+        "paper": {"x_percent": 50, "y_percent": 60, "max_width_percent": 40}
+      },
+      "keywords": ["trump", "bill", "signing", "executive order", "document"]
+    },
+    {
+      "id": "train_hitting_bus",
+      "name": "Train Hitting School Bus",
+      "filename": "train_hitting_bus.png",
+      "description": "Train about to hit school bus",
+      "category": "dark_humor",
+      "text_positions": {
+        "train": {"x_percent": 30, "y_percent": 50},
+        "bus": {"x_percent": 70, "y_percent": 50}
+      },
+      "keywords": ["train", "bus", "crash", "hit", "unstoppable"]
+    },
+    {
+      "id": "flex_tape",
+      "name": "Flex Tape",
+      "filename": "flex_tape.png",
+      "description": "Phil Swift fixing things with Flex Tape",
+      "category": "reaction",
+      "text_positions": {
+        "damage": {"x_percent": 30, "y_percent": 50},
+        "tape": {"x_percent": 70, "y_percent": 50}
+      },
+      "keywords": ["flex tape", "fix", "damage", "phil swift"]
+    },
+    {
+      "id": "friendship_ended",
+      "name": "Friendship Ended",
+      "filename": "friendship_ended.jpg",
+      "description": "Friendship ended with X, now Y is my best friend",
+      "category": "comparison",
+      "text_positions": {
+        "old_friend": {"x_percent": 25, "y_percent": 50},
+        "new_friend": {"x_percent": 75, "y_percent": 50}
+      },
+      "keywords": ["friendship", "ended", "best friend", "new", "old"]
+    },
+    {
+      "id": "all_my_homies_hate",
+      "name": "All My Homies Hate",
+      "filename": "all_my_homies_hate.jpg",
+      "description": "Me and the boys hating something",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["homies", "hate", "boys", "gang", "group"]
+    },
+    {
+      "id": "domino_effect",
+      "name": "Domino Effect",
+      "filename": "domino_effect.jpg",
+      "description": "Small domino leading to big outcome",
+      "category": "comparison",
+      "text_positions": {
+        "small": {"x_percent": 20, "y_percent": 50},
+        "large": {"x_percent": 80, "y_percent": 50}
+      },
+      "keywords": ["domino", "effect", "chain", "consequence", "cause"]
+    },
+    {
+      "id": "two_guys_bus",
+      "name": "Two Guys On A Bus",
+      "filename": "two_guys_bus.jpg",
+      "description": "Two people on bus with different reactions",
+      "category": "comparison",
+      "text_positions": {
+        "left": {"x_percent": 25, "y_percent": 50},
+        "right": {"x_percent": 75, "y_percent": 50}
+      },
+      "keywords": ["bus", "two guys", "reaction", "comparison"]
+    },
+    {
+      "id": "cmon_do_something",
+      "name": "C'mon Do Something",
+      "filename": "cmon_do_something.jpg",
+      "description": "Kid poking thing with stick",
+      "category": "reaction",
+      "text_positions": {
+        "thing": {"x_percent": 50, "y_percent": 40},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["cmon", "do something", "poke", "stick", "waiting"]
+    },
+    {
+      "id": "types_headaches",
+      "name": "Types of Headaches",
+      "filename": "types_headaches.jpg",
+      "description": "Different types of headaches diagram",
+      "category": "relatable",
+      "text_positions": {
+        "fourth": {"x_percent": 75, "y_percent": 75}
+      },
+      "keywords": ["headache", "types", "pain", "migraine", "stress"]
+    },
+    {
+      "id": "grant_gustin_grave",
+      "name": "Grant Gustin Over Grave",
+      "filename": "grant_gustin_grave.png",
+      "description": "Grant Gustin standing happily over grave",
+      "category": "dark_humor",
+      "text_positions": {
+        "grave": {"x_percent": 50, "y_percent": 70},
+        "person": {"x_percent": 50, "y_percent": 30}
+      },
+      "keywords": ["grave", "grant gustin", "flash", "happy", "dead"]
+    },
+    {
+      "id": "inhaling_seagull",
+      "name": "Inhaling Seagull",
+      "filename": "inhaling_seagull.jpg",
+      "description": "Seagull inhaling before screaming",
+      "category": "escalation",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 12},
+        "panel2": {"x_percent": 50, "y_percent": 37},
+        "panel3": {"x_percent": 50, "y_percent": 62},
+        "panel4": {"x_percent": 50, "y_percent": 87}
+      },
+      "keywords": ["seagull", "inhaling", "scream", "yell", "buildup"]
+    },
+    {
+      "id": "whisper_goosebumps",
+      "name": "Whisper and Goosebumps",
+      "filename": "whisper_goosebumps.jpg",
+      "description": "Whisper causing goosebumps reaction",
+      "category": "reaction",
+      "text_positions": {
+        "whisper": {"x_percent": 50, "y_percent": 30},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["whisper", "goosebumps", "asmr", "tingle", "reaction"]
+    },
+    {
+      "id": "say_the_line_bart",
+      "name": "Say The Line Bart",
+      "filename": "say_the_line_bart.jpg",
+      "description": "Crowd demanding Bart say his catchphrase",
+      "category": "meta",
+      "text_positions": {
+        "line": {"x_percent": 50, "y_percent": 50}
+      },
+      "keywords": ["bart", "say the line", "simpsons", "catchphrase"]
+    },
+    {
+      "id": "im_captain_now",
+      "name": "I'm The Captain Now",
+      "filename": "im_captain_now.jpg",
+      "description": "Look at me, I'm the captain now",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["captain", "now", "look at me", "in charge"]
+    },
+    {
+      "id": "three_headed_dragon",
+      "name": "Three-Headed Dragon",
+      "filename": "three_headed_dragon.jpg",
+      "description": "Two smart dragon heads, one derpy one",
+      "category": "comparison",
+      "text_positions": {
+        "head1": {"x_percent": 25, "y_percent": 30},
+        "head2": {"x_percent": 50, "y_percent": 30},
+        "head3": {"x_percent": 75, "y_percent": 30}
+      },
+      "keywords": ["dragon", "three heads", "derpy", "king ghidorah"]
+    },
+    {
+      "id": "star_wars_yoda",
+      "name": "Star Wars Yoda",
+      "filename": "star_wars_yoda.jpg",
+      "description": "Yoda giving wise advice",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["yoda", "star wars", "wise", "jedi", "advice"]
+    },
+    {
+      "id": "disappointed_black_guy",
+      "name": "Disappointed Black Guy",
+      "filename": "disappointed_black_guy.jpg",
+      "description": "Happy then disappointed reaction",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 25, "max_width_percent": 90},
+        "bottom": {"y_percent": 75, "max_width_percent": 90}
+      },
+      "keywords": ["disappointed", "happy", "sad", "reaction", "letdown"]
+    },
+    {
+      "id": "is_this_butterfly",
+      "name": "Is This A Butterfly?",
+      "filename": "is_this_butterfly.jpg",
+      "description": "Anime character misidentifying things",
+      "category": "confusion",
+      "text_positions": {
+        "butterfly": {"x_percent": 60, "y_percent": 20},
+        "guy": {"x_percent": 30, "y_percent": 80},
+        "bottom": {"y_percent": 90, "max_width_percent": 90}
+      },
+      "keywords": ["butterfly", "is this", "confused", "wrong"]
+    },
+    {
+      "id": "scooby_mask_reveal",
+      "name": "Scooby Doo Mask Reveal",
+      "filename": "scooby_mask_reveal.jpg",
+      "description": "Unmasking the villain reveal",
+      "category": "revelation",
+      "text_positions": {
+        "mask": {"x_percent": 50, "y_percent": 25},
+        "villain": {"x_percent": 50, "y_percent": 50},
+        "real_villain": {"x_percent": 50, "y_percent": 75}
+      },
+      "keywords": ["scooby", "mask", "reveal", "villain", "unmasking"]
+    },
+    {
+      "id": "no_yes",
+      "name": "No / Yes",
+      "filename": "no_yes.jpg",
+      "description": "Simple no vs yes comparison",
+      "category": "comparison",
+      "text_positions": {
+        "no": {"x_percent": 50, "y_percent": 25},
+        "yes": {"x_percent": 50, "y_percent": 75}
+      },
+      "keywords": ["no", "yes", "comparison", "simple"]
+    },
+    {
+      "id": "grandma_finds_internet",
+      "name": "Grandma Finds The Internet",
+      "filename": "grandma_finds_internet.jpg",
+      "description": "Old person discovering internet things",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["grandma", "internet", "old", "computer", "discover"]
+    },
+    {
+      "id": "gus_fring_not_same",
+      "name": "Gus Fring We Are Not The Same",
+      "filename": "gus_fring_not_same.png",
+      "description": "Gus Fring explaining we are not the same",
+      "category": "comparison",
+      "text_positions": {
+        "you": {"x_percent": 50, "y_percent": 25},
+        "me": {"x_percent": 50, "y_percent": 50},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["gus fring", "not the same", "breaking bad", "different"]
+    },
+    {
+      "id": "spiderman_pointing",
+      "name": "Spiderman Pointing",
+      "filename": "spiderman_pointing.jpg",
+      "description": "Two Spidermen pointing at each other",
+      "category": "comparison",
+      "text_positions": {
+        "left": {"x_percent": 25, "y_percent": 50},
+        "right": {"x_percent": 75, "y_percent": 50}
+      },
+      "keywords": ["spiderman", "pointing", "same", "identical"]
+    },
+    {
+      "id": "two_paths",
+      "name": "Two Paths",
+      "filename": "two_paths.png",
+      "description": "Choosing between two different paths",
+      "category": "choice",
+      "text_positions": {
+        "left_path": {"x_percent": 25, "y_percent": 30},
+        "right_path": {"x_percent": 75, "y_percent": 30},
+        "person": {"x_percent": 50, "y_percent": 70}
+      },
+      "keywords": ["paths", "choice", "decision", "fork", "road"]
+    },
+    {
+      "id": "competition_opponent",
+      "name": "When I'm In A Competition",
+      "filename": "competition_opponent.jpg",
+      "description": "When competition and opponent is formidable",
+      "category": "modern",
+      "text_positions": {
+        "competition": {"x_percent": 50, "y_percent": 30},
+        "opponent": {"x_percent": 50, "y_percent": 70}
+      },
+      "keywords": ["competition", "opponent", "losing", "challenge"]
+    },
+    {
+      "id": "finding_neverland",
+      "name": "Finding Neverland",
+      "filename": "finding_neverland.jpg",
+      "description": "Johnny Depp comforting sad child",
+      "category": "wholesome",
+      "text_positions": {
+        "panel1": {"x_percent": 50, "y_percent": 20},
+        "panel2": {"x_percent": 50, "y_percent": 50},
+        "panel3": {"x_percent": 50, "y_percent": 80}
+      },
+      "keywords": ["finding neverland", "comfort", "sad", "crying", "there there"]
+    },
+    {
+      "id": "ight_imma_head_out",
+      "name": "Ight Imma Head Out",
+      "filename": "ight_imma_head_out.jpg",
+      "description": "Spongebob getting up to leave",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["ight", "imma head out", "spongebob", "leaving", "bye"]
+    },
+    {
+      "id": "charlie_conspiracy",
+      "name": "Charlie Conspiracy",
+      "filename": "charlie_conspiracy.jpg",
+      "description": "Charlie from Always Sunny with conspiracy board",
+      "category": "obsession",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["charlie", "conspiracy", "board", "always sunny", "pepe silvia"]
+    },
+    {
+      "id": "rock_driving",
+      "name": "The Rock Driving",
+      "filename": "rock_driving.jpg",
+      "description": "The Rock driving with passenger conversation",
+      "category": "conversation",
+      "text_positions": {
+        "passenger": {"x_percent": 50, "y_percent": 25},
+        "rock": {"x_percent": 50, "y_percent": 75}
+      },
+      "keywords": ["rock", "driving", "car", "conversation", "dwayne"]
+    },
+    {
+      "id": "most_interesting_man",
+      "name": "Most Interesting Man In The World",
+      "filename": "most_interesting_man.jpg",
+      "description": "I don't always, but when I do",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["interesting", "man", "dos equis", "dont always"]
+    },
+    {
+      "id": "what_if_i_told_you",
+      "name": "What If I Told You",
+      "filename": "what_if_i_told_you.jpg",
+      "description": "Morpheus revealing truth about reality",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["what if", "told you", "morpheus", "matrix", "truth"]
+    },
+    {
+      "id": "awkward_seal",
+      "name": "Awkward Seal",
+      "filename": "awkward_seal.jpg",
+      "description": "Seal with awkward moment face",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["awkward", "seal", "moment", "cringe", "uncomfortable"]
+    },
+    {
+      "id": "aliens_guy",
+      "name": "Aliens Guy",
+      "filename": "aliens_guy.jpg",
+      "description": "History Channel guy saying aliens",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["aliens", "ancient", "history channel", "conspiracy"]
+    },
+    {
+      "id": "bernie_once_again",
+      "name": "Bernie Once Again Asking",
+      "filename": "bernie_once_again.png",
+      "description": "I am once again asking for your support",
+      "category": "modern",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["bernie", "once again", "asking", "support"]
+    },
+    {
+      "id": "bet_hes_thinking",
+      "name": "I Bet He's Thinking About Other Women",
+      "filename": "bet_hes_thinking.jpg",
+      "description": "Couple in bed, she assumes he's thinking about women",
+      "category": "relatable",
+      "text_positions": {
+        "her": {"x_percent": 30, "y_percent": 30},
+        "him": {"x_percent": 70, "y_percent": 70}
+      },
+      "keywords": ["thinking", "other women", "bed", "couple", "actually"]
+    },
+    {
+      "id": "bike_fall",
+      "name": "Bike Fall",
+      "filename": "bike_fall.jpg",
+      "description": "Person putting stick in own bike wheel",
+      "category": "irony",
+      "text_positions": {
+        "person": {"x_percent": 50, "y_percent": 15},
+        "stick": {"x_percent": 50, "y_percent": 45},
+        "fallen": {"x_percent": 50, "y_percent": 80}
+      },
+      "keywords": ["bike", "fall", "stick", "self sabotage", "own fault"]
+    },
+    {
+      "id": "kid_drowning_pool",
+      "name": "Mother Ignoring Kid Drowning",
+      "filename": "kid_drowning_pool.jpg",
+      "description": "Mother ignoring drowning kid for other child",
+      "category": "comparison",
+      "text_positions": {
+        "drowning_kid": {"x_percent": 30, "y_percent": 30},
+        "mother": {"x_percent": 60, "y_percent": 50},
+        "favorite_kid": {"x_percent": 70, "y_percent": 80}
+      },
+      "keywords": ["drowning", "pool", "mother", "ignoring", "favorite"]
+    },
+    {
+      "id": "marked_safe_from",
+      "name": "Marked Safe From",
+      "filename": "marked_safe_from.jpg",
+      "description": "Facebook marked safe from something",
+      "category": "modern",
+      "text_positions": {
+        "event": {"x_percent": 50, "y_percent": 60}
+      },
+      "keywords": ["marked safe", "facebook", "safe from", "survived"]
+    },
+    {
+      "id": "running_away_balloon",
+      "name": "Running Away Balloon",
+      "filename": "running_away_balloon.jpg",
+      "description": "Person chasing balloon while another floats away",
+      "category": "comparison",
+      "text_positions": {
+        "person": {"x_percent": 50, "y_percent": 80},
+        "chasing": {"x_percent": 30, "y_percent": 30},
+        "escaping": {"x_percent": 70, "y_percent": 10}
+      },
+      "keywords": ["balloon", "running", "chase", "priorities", "escaping"]
+    },
+    {
+      "id": "uno_draw_25",
+      "name": "UNO Draw 25",
+      "filename": "uno_draw_25.jpg",
+      "description": "UNO card choice between action or draw 25",
+      "category": "choice",
+      "text_positions": {
+        "card": {"x_percent": 30, "y_percent": 50},
+        "draw25": {"x_percent": 70, "y_percent": 50}
+      },
+      "keywords": ["uno", "draw 25", "cards", "choice", "refuse"]
+    },
+    {
+      "id": "days_without",
+      "name": "Days Without (Simpsons)",
+      "filename": "days_without.png",
+      "description": "Sign showing days without incident being reset",
+      "category": "meta",
+      "text_positions": {
+        "sign": {"x_percent": 50, "y_percent": 50}
+      },
+      "keywords": ["days without", "simpsons", "lenny", "reset", "zero"]
+    },
+    {
+      "id": "kermit_window",
+      "name": "Kermit Looking Out Window",
+      "filename": "kermit_window.jpg",
+      "description": "Kermit contemplating while looking out window",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["kermit", "window", "thinking", "contemplating", "sad"]
+    },
+    {
+      "id": "chemistry_cat",
+      "name": "Chemistry Cat",
+      "filename": "chemistry_cat.jpg",
+      "description": "Cat with chemistry puns",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["chemistry", "cat", "science", "pun", "periodic"]
+    },
+    {
+      "id": "laughing_lizard",
+      "name": "Laughing Lizard",
+      "filename": "laughing_lizard.jpg",
+      "description": "Lizard laughing mischievously",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["lizard", "laughing", "hehe", "mischief", "evil"]
+    },
+    {
+      "id": "overly_attached_girlfriend",
+      "name": "Overly Attached Girlfriend",
+      "filename": "overly_attached_girlfriend.jpg",
+      "description": "Girl with obsessive expression",
+      "category": "advice_animal",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["overly attached", "girlfriend", "obsessed", "clingy", "creepy"]
+    },
+    {
+      "id": "success_baby",
+      "name": "Success Baby / Yes Kid",
+      "filename": "success_baby.jpg",
+      "description": "Baby celebrating with fist pump",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["success", "baby", "yes", "fist pump", "victory"]
+    },
+    {
+      "id": "guy_looking_back",
+      "name": "Guy Looking Back",
+      "filename": "guy_looking_back.jpg",
+      "description": "Guy looking back while walking",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["looking back", "walking", "surprised", "wait"]
+    },
+    {
+      "id": "blinking_guy",
+      "name": "Blinking Guy",
+      "filename": "blinking_guy.jpg",
+      "description": "Man blinking in disbelief",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["blinking", "disbelief", "confused", "what"]
+    },
+    {
+      "id": "third_world_kid",
+      "name": "Third World Kid",
+      "filename": "third_world_kid.jpg",
+      "description": "Kid looking skeptical",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["third world", "kid", "skeptical", "really"]
+    },
+    {
+      "id": "predator_handshake",
+      "name": "Predator Handshake",
+      "filename": "predator_handshake.jpg",
+      "description": "Epic arm clasp from Predator movie",
+      "category": "comparison",
+      "text_positions": {
+        "left_arm": {"x_percent": 20, "y_percent": 50},
+        "right_arm": {"x_percent": 80, "y_percent": 50},
+        "center": {"x_percent": 50, "y_percent": 50}
+      },
+      "keywords": ["predator", "handshake", "arm", "clasp", "agreement"]
+    },
+    {
+      "id": "kombucha_girl",
+      "name": "Kombucha Girl",
+      "filename": "kombucha_girl.jpg",
+      "description": "Girl reacting to kombucha taste",
+      "category": "reaction",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["kombucha", "girl", "reaction", "taste", "hmm"]
+    },
+    {
+      "id": "obi_wan",
+      "name": "Obi-Wan Hello There",
+      "filename": "obi_wan.jpg",
+      "description": "Obi-Wan Kenobi saying hello there",
+      "category": "classic",
+      "text_positions": {
+        "top": {"y_percent": 10, "max_width_percent": 90},
+        "bottom": {"y_percent": 85, "max_width_percent": 90}
+      },
+      "keywords": ["obi wan", "hello there", "star wars", "general kenobi"]
+    },
+    {
+      "id": "aj_styles_undertaker",
+      "name": "AJ Styles & Undertaker",
+      "filename": "aj_styles_undertaker.jpg",
+      "description": "AJ Styles looking at Undertaker behind him",
+      "category": "reaction",
+      "text_positions": {
+        "aj": {"x_percent": 30, "y_percent": 50},
+        "undertaker": {"x_percent": 70, "y_percent": 50}
+      },
+      "keywords": ["aj styles", "undertaker", "wwe", "behind", "danger"]
     }
   ],
   "categories": {
-    "comparison": "Compare two things (Drake, Distracted BF, Buff Doge)",
-    "choice": "Hard decisions (Two Buttons)",
-    "escalation": "Increasingly extreme takes (Expanding Brain)",
-    "reaction": "React to something (Surprised Pikachu, Batman Slap)",
-    "opinion": "Hot takes (Change My Mind)",
-    "denial": "Cope and denial (This is Fine, Hide Pain Harold)",
-    "plan": "Plans going wrong (Gru's Plan)",
-    "revelation": "Surprising truths (Always Has Been)",
-    "classic": "Timeless formats (One Does Not Simply)"
+    "comparison": "Compare two things side by side",
+    "choice": "Hard decisions between options",
+    "escalation": "Increasingly extreme progression",
+    "reaction": "React to situations or news",
+    "opinion": "Hot takes and controversial opinions",
+    "denial": "Cope and denial of reality",
+    "plan": "Plans going wrong unexpectedly",
+    "revelation": "Surprising truths revealed",
+    "classic": "Timeless meme formats",
+    "advice_animal": "Classic image macro format with animal",
+    "modern": "Recent viral meme formats (2020+)",
+    "wholesome": "Positive and heartwarming memes",
+    "dark_humor": "Edgy or dark comedy",
+    "relatable": "Everyday relatable situations",
+    "surreal": "Absurd and surreal humor",
+    "meta": "Self-referential memes",
+    "argument": "Arguments and debates",
+    "confusion": "Misunderstanding situations",
+    "irony": "Ironic or self-defeating actions",
+    "obsession": "Obsessive behavior memes",
+    "conversation": "Dialogue-based templates",
+    "office": "Workplace and office humor"
   },
   "default_fonts": {
     "impact": "Impact",
